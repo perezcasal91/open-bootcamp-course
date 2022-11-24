@@ -1,0 +1,258 @@
+> Frontend and Backend
+
+    - Front End 
+        * The Client Part
+    - Back End
+        * The Server Part
+    - Full Stack 
+        * All Client and Server
+
+> Client and Server Languages
+
+    - Client
+        * HTML
+        * CSS
+        * JS
+        * TypeScript
+        * AJAX
+    - Server
+        * Java
+        * Python
+        * NodeJs
+        * PHP
+
+> Frameworks
+
+    - Client
+        * JavaScript
+            = AngularJs 
+            = VueJs
+            = ReactJs
+        * PHP
+            = CodeIgniter
+        * Python
+            = Django
+    - Server
+        * JavaScript
+            = ExpressJs
+            = Adonis
+    - Unit Test
+        * JavaScript
+            = Jest
+        * Python
+            = pytest
+
+> Libraries
+
+    - DOM (Document Object Model)
+        * React
+    - CSS (Cascading Style Sheets)
+        * Bootstrap
+
+> Servers
+
+    - Apache
+    - Apache TomCat
+    - NodeJs
+    - Microsoft IIS
+
+> Browsers
+
+    - Google Chrome
+    - Firefox
+    - Opera
+    - Microsoft Edge
+    - Safari
+
+> Stacks
+
+    - PHP
+        = LAMP (Linux, Apache, MySql, PHP)
+        = WAMP (Windows, Apache, MySql, Perl-Python-PHP)
+        = WAMPP (Multiplataphorm, Apache, MySql, Perl-Python-PHP))
+    - JavaScript
+        = MERN (MongoDb, ExpressJs, React, NodeJs)
+        = MEAN (MongoDb, ExpressJs, AngularJs, NodeJs)
+        = MEVN (MongoDb, ExpressJs, VueJs, NodeJs)
+        = PERN (PostgreSQL, ExpressJs, ReactJs, NodeJs)
+
+> DataBase
+
+    - Design
+        * Conceptual
+        * Logical
+        * Physical
+    - DataBase Types 
+        * SQL
+            = Relational (MySql, PostgreSQL, MariaDB, Oracle)
+        * NoSQL
+            = Documents (MongoDb, CloudFirestore)
+            = Key-Value (Cassandra, Redis)
+            = Graph (GraphQL)
+
+> Software Methodologies
+
+    - Development (DevOps)
+        * CI (Continuous Integration)
+            = Submit the code(Pull, Merge, Push, Add)
+            = Check before submit
+        * CD (Continuous Deployment)
+            = Deploy the App to production
+
+> Container
+
+    - Infrastructure
+    - Operative System
+    - Container Engine
+        * Docker
+        * PodMan
+    - Container
+        * Apps = Source Code
+        * Library/Dependencies = To execute
+        * Instructions Operative = Operative System
+
+> Orchestration
+
+    - Development Rol
+        * Containers
+            = Frontend
+            = Backend
+            = DataBase
+        * Master (Control all the Containers)
+    - IT Operations Rol
+        * Is compound by Nodes (Node1, Node2, Node3)
+        * Every Node is compound by Containers
+    - Benefits
+        * Deploy (Deployment of the project)
+        * Scaling (Satisfy the need of the project goal, no matter the changes)
+        * Network (Create a network service for all Node for the same type of containers)
+        * Insigt (Behavior of the project, Checking)
+        * Purge (If there is a container that is defective or does not work, it replace it with one that does work)
+    - Orchestrator Types
+        * Docker
+        * Kubernetes
+        * Red Hat Open Shift
+
+> Cloud Computing
+
+    - Benefits
+        * Maintenance
+        * Integration Cost 
+        * Scalability
+        * Security
+    - Cloud Services
+        * AWS
+        * Google Cloud
+        * Azure
+
+> Unit Test
+
+    - Types
+        * Black Box (Is about the result)
+        * White Box (Is about the code result)
+        * Gray Box (Is the conbination of both boxes)
+    - Methodos 
+        * Functional Test
+            = Functionality
+            = Error Test 
+            = Support in the requirements of the client / final user
+        * No Functional Test
+            = Performance
+                + Loading Times
+                + Stress Test
+                + Scalability
+            = Accessibility
+            = UX / UI
+            = Security Test
+    - Models
+        * Cascade or Lineal
+        * Sprints or Iterative-Repetitive
+        * V
+        * Spiral
+
+> Message Queueing
+
+    - Message
+        * Information that we have to transmit point to point
+        * Data Types
+    - Queueing
+        * Apps Dissociation
+        * Async System
+    - Structures
+        * Peer to Peer (1 to 1)
+            = Producer
+            = Queue
+            = Consumer
+        * Publisher - Subscriber (1 to n)
+            * Publisher
+            * Queue
+            * Subscriber
+    - Benefits
+        * Apps Dissociation
+        * Specialization the Apps
+        * Scalability
+        * Prosecution
+        * Evolution
+    - Queue Services
+        * Rabbit MQ
+        * Redis
+
+> HTTP
+
+    - Request
+        * GET
+        * POST 
+        * PUT
+        * DELETE
+        * PATCH
+
+> APIs 
+
+    - API (Application Programming Interface)
+        * Sets of functions that we can use from anywhere
+    - REST (API RESTfull)
+        * REpresentational State Tranfer)
+        * Communication Protocol
+    - SOAP (Simple Object Access Protocol)
+        * Protocol
+        * Stateless Default
+            = Can be setup to Stateful
+        * Only XML
+        * More Sources
+        * HTTP + SMTP + UDP and others
+        * Flexibility Less
+    - gRPC (Google Remote Procedure Call)
+        * Transmission Technology of Serialize Data
+        * Create by Google
+        * Bi-directional streaming
+        * Multilanguage and Multiplataphorm
+        * Protocol Buffer
+            = Mechanism for Data Serialization
+            = Weight is much less -> Serialize Data -> Binary
+
+> Data Protection
+
+    - Hash
+        * MD5 (Less Secure)
+        * SHA-256 (More Secure)
+    - Encryption 
+        * Symmetric
+            = Message + Encrypt Key -> Encrypt Message
+            = Encrypt Message + Encrypt Key -> Message
+        * Asymmetric   
+            = Message + Public Key -> Encrypt Message
+            = Encrypt Message + Private Key -> Message
+    - Security Protocol in Internet 
+        * SSL / TLS 
+            = Secure Socket Layer
+            = X.509 Certificate
+            = Asymmetric Encryption
+        * SSH
+            = Secure Shell
+            = Communication Protocol with Servers
+            = Encrypt
+
+
+
+
+    
