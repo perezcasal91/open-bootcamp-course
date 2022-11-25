@@ -12,7 +12,7 @@ public class Operators {
     // Diff -> 5
     int resultDiff = anInt1 - anInt2;
     // Div -> 2
-    int resultDiv = anInt1 / anInt2;
+    float resultDiv = (float)(anInt1 / anInt2);
     // Pow -> 100 000
     int resultPow = anInt1 * anInt2;
     // Rest -> 0
