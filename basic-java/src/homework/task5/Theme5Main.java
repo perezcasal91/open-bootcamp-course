@@ -12,35 +12,36 @@ public class Theme5Main {
                 1300.7d, 13.6f, 130);
         // Save
         carInterface.saveCar(car1);
-        if (carInterface.contain(car1)) {
-            System.out.println("Saving Car: " + car1.getId());
-        }
+        checkSave(carInterface, car1);
         carInterface.saveCar(car2);
-        if (carInterface.contain(car2)) {
-            System.out.println("Saving Car: " + car2.getId());
-        }
+        checkSave(carInterface, car1);
         carInterface.saveCar(car3);
-        if (carInterface.contain(car3)) {
-            System.out.println("Saving Car: " + car2.getId());
-        }
+        checkSave(carInterface, car1);
         // Showing Cars
         for (Car car : carInterface.findAll()) {
             System.out.println(car);
         }
         // Deleting Cars
         carInterface.deleteCar(car1);
-        if (!carInterface.contain(car1)) {
-            System.out.println("Deleting was successfully");
-        }
+        checkDelete(carInterface, car1);
         carInterface.deleteCar(car2);
-        if (!carInterface.contain(car2)) {
-            System.out.println("Deleting was successfully");
-        }
+        checkDelete(carInterface, car2);
         carInterface.deleteCar(car3);
-        if (!carInterface.contain(car3)) {
+        checkDelete(carInterface, car3);
+        // Verifying is the DataBase is empty
+        isEmptyDataBase(carInterface);
+    }
+    private static void checkSave(CarInterface carInterface, Car car){
+        if (carInterface.contain(car)) {
+            System.out.println("Saving Car: " + car.getId());
+        }
+    }
+    private static void checkDelete(CarInterface carInterface, Car car){
+        if (carInterface.contain(car)) {
             System.out.println("Deleting was successfully");
         }
-        // Verifying is the DataBase is empty
+    }
+    private static void isEmptyDataBase(CarInterface carInterface) {
         if (carInterface.findAll().isEmpty()){
             System.out.println("The Car Data Base is empty");
         } else {
