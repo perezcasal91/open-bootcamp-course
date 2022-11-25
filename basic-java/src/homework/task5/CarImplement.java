@@ -44,7 +44,7 @@ public class CarImplement implements CarInterface {
     }
     @Override
     public Car findCarById(Integer id) {
-        for (Object car : dataBase.getAll()) {
+        for (Object car : this.dataBase.getAll()) {
             if (((Car)car).getId().equals(id)){
                 return (Car)car;
             }

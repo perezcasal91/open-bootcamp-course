@@ -23,7 +23,6 @@ public class Car {
         this.speed = speed;
     }
     // Getter and Setter
-
     public Integer getId() {
         return id;
     }
