@@ -9,7 +9,7 @@ public class Theme1Main {
         System.out.println("Short = " +aShort);
         int anInt = 3;
         System.out.println("Int = " +anInt);
-        long aLong = 4l;
+        long aLong = 4L;
         System.out.println("Long = " +aLong);
         // Float Point
         float aFloat = 1.2f;

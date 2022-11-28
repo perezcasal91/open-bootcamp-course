@@ -1,0 +1,8 @@
+The default capacity of the Vector is 10, so if we try to add more elements beyond the capacity, the class
+Vector would have to resize the Array behind, so in order to do that, it's create a new Array with the
+capacity increased by 10 more than original Array, and then copy all the elements from the original Array
+to the new one, and then assign the new Array to the original one, so that operation take too long
+operational time, that's the problem with the Vectors when we don't know the initial capacity, in other
+words, the quantity of the elements that we want to insert into the Vector. So for this particular exercise
+we know the initial capacity, it is 1000, so we can initialize the Vector in that capacity, so for the first
+time we insert that problem would not happen.

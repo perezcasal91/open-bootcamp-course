@@ -1,10 +1,9 @@
 package homework.task5;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CarImplement implements CarInterface {
-    private Theme5DataBase dataBase;
+    private final Theme5DataBase dataBase;
     public CarImplement(){
         this.dataBase = new Theme5DataBase();
     }

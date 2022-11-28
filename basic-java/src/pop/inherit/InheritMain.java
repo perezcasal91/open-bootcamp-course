@@ -1,11 +1,9 @@
 package pop.inherit;
 
-import pop.inherit.Car;
-
 public class InheritMain {
     public static void main(String[] args) {
         // Declaring
-        ElectricCar car;
+        ElectricCar car = new ElectricCar();
         // Init the object car with empty parameters and setting the properties one by one
         ElectricCar car1 = new ElectricCar();
         car1.setColor("Black");

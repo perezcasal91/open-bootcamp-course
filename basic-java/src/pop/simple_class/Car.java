@@ -72,7 +72,7 @@ public class Car {
     // Behavior
     public void speedUp(Integer quantity){
         if(quantity > 0 && quantity < 100){
-            Integer newSpeed = this.speed + quantity;
+            var newSpeed = this.speed + quantity;
             if (newSpeed < 250) {
                 setSpeed(newSpeed);
             }

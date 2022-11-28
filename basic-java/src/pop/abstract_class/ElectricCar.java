@@ -1,7 +1,5 @@
 package pop.abstract_class;
 
-import pop.abstract_class.Car;
-
 public class ElectricCar extends Car {
     private String electricEngine;
     public ElectricCar(){
@@ -36,7 +34,7 @@ public class ElectricCar extends Car {
     public void speedUp(Integer quantity){
         quantity += 10;
         if(quantity > 0 && quantity < 100) {
-            Integer newSpeed = this.getSpeed() + quantity;
+            var newSpeed = this.getSpeed() + quantity;
             if (newSpeed < 250) {
                 super.setSpeed(newSpeed);
             }

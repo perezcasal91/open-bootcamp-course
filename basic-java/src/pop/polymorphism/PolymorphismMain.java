@@ -1,8 +1,5 @@
 package pop.polymorphism;
 
-import pop.polymorphism.ElectricCar;
-import pop.polymorphism.HybridCar;
-
 public class PolymorphismMain {
     public static void main(String[] args) {
         // Declaring
