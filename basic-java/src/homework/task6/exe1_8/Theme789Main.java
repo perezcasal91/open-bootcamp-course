@@ -1,4 +1,4 @@
-package homework.task6;
+package homework.task6.exe1_8;
 
 import java.io.*;
 import java.util.*;
