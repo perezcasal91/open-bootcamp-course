@@ -15,45 +15,46 @@ public class StreamAndLambdaMain {
     public static void main(String[] args) {
         Integer [] employeeIds = {1, 2};
         EmployeeDB employeeDB = new EmployeeDB();
-        streamForEach(employeeDB);
-        streamForEachSetPropertyUsingLambda(employeeDB);
-        streamMapFindByIds(employeeIds, employeeDB);
-        streamCollect(employeeDB);
-        streamFilerMapFindByIds(employeeIds, employeeDB);
-        streamFilerMapFindByIdsFindFirst(employeeIds, employeeDB);
-        streamToArray(employeeDB);
-        streamFlatMap();
-        streamPeek(employeeDB, 50d);
-        streamPeek(employeeDB, 500d);
-        streamCount(employeeDB);
-        streamIterateSkipLimit();
-        streamSortedCompareByName(employeeDB);
-        streamSimpleMinById(employeeDB);
-        streamMaxUsingComparatorBySalary(employeeDB);
-        streamComparatorNaturalAndReverseOrder();
-        streamDistinct();
-        streamAllMatchAnyNone();
-        streamMaxValue(employeeDB);
-        streamCreation();
-        streamAverageAndSum(employeeDB);
-        streamReduce(employeeDB);
-        streamJoin(employeeDB);
-        streamToSet();
-        streamToVectorCollection(employeeDB);
-        streamSummarizingDouble(employeeDB);
-        streamSummarizingDoubleUsingMap(employeeDB);
-        streamPartitionBy(employeeDB);
-        streamGroupBy(employeeDB);
-        streamMapping(employeeDB);
-        streamReducing(employeeDB);
-        streamReducingAndGroupBy(employeeDB);
-        streamGenerateAndIterate();
-        streamWriteFile();
-        streamWriteFileEmployee(employeeDB);
-        streamReadFile();
-        streamReadFileEmployee();
-        streamTakeWhile();
-        streamDropWhile();
+//        streamForEach(employeeDB);
+//        streamForEachSetPropertyUsingLambda(employeeDB);
+//        streamMapFindByIds(employeeIds, employeeDB);
+//        streamCollect(employeeDB);
+//        streamFilerMapFindByIds(employeeIds, employeeDB);
+//        streamFilerMapFindByIdsFindFirst(employeeIds, employeeDB);
+//        streamToArray(employeeDB);
+//        streamFlatMap();
+//        streamPeek(employeeDB, 50d);
+//        streamPeek(employeeDB, 500d);
+//        streamCount(employeeDB);
+//        streamIterateSkipLimit();
+//        streamSortedCompareByName(employeeDB);
+//        streamSimpleMinById(employeeDB);
+//        streamMaxUsingComparatorBySalary(employeeDB);
+//        streamComparatorNaturalAndReverseOrder();
+//        streamDistinct();
+//        streamAllMatchAnyNone();
+//        streamMaxValue(employeeDB);
+//        streamCreation();
+//        streamAverageAndSum(employeeDB);
+//        streamReduce(employeeDB);
+//        streamJoin(employeeDB);
+//        streamToSet();
+//        streamToVectorCollection(employeeDB);
+//        streamSummarizingDouble(employeeDB);
+//        streamSummarizingDoubleUsingMap(employeeDB);
+//        streamPartitionBy(employeeDB);
+//        streamGroupBy(employeeDB);
+//        streamMapping(employeeDB);
+//        streamReducing(employeeDB);
+//        streamReducingAndGroupBy(employeeDB);
+//        streamGenerateAndIterate();
+//        streamWriteFile();
+//        streamWriteFileEmployee(employeeDB);
+        streamWriteFileEmployeeJson(employeeDB);
+//        streamReadFile();
+//        streamReadFileEmployee();
+//        streamTakeWhile();
+//        streamDropWhile();
     }
     private static final Employee[] listEmployees =
        {
@@ -281,6 +282,24 @@ public class StreamAndLambdaMain {
             throw new RuntimeException(e);
         }
     }
+    private static void streamWriteFileEmployeeJson(EmployeeDB employeeDB){
+        try {
+            var uri = Paths.get("src/resources/json/stream_file_employee.json");
+            var printWriter = new PrintWriter(Files.newBufferedWriter(uri));
+            printWriter.print("{");
+            Stream.of(employeeDB.employeeList.stream().map(Employee::toJSON).toArray())
+                    .forEach(o -> {
+                        printWriter.println(o);
+                        if (!employeeDB.employeeList.get(employeeDB.employeeList.size() - 1).toJSON().equals(o)){
+                            printWriter.print(",");
+                        }
+                    });
+            printWriter.print("}");
+            printWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     private static void streamReadFile(){
         try {
             var uri = Paths.get("src/resources/doc/stream_file.txt");
@@ -298,7 +317,7 @@ public class StreamAndLambdaMain {
             stringEmployeeList.forEach(s -> {
                 var data = Arrays.stream(s.substring(9, s.length() - 1).split(",")).toList();
                 var id = Integer.parseInt(data.get(0).split("=")[1]);
-                var name = data.get(1).split("=")[1].replace("'","");
+                var name = data.get(1).split("=")[1];
                 var salary = Double.parseDouble(data.get(2).split("=")[1]);
                 employeeList.add(new Employee(id, name, salary));
             });
@@ -363,9 +382,18 @@ class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
+                " id=" + this.getId() +
+                ", name=" + this.getName() +
+                ", salary=" + this.getSalary() +
                 '}';
     }
+    public String toJSON() {
+        return "\n  \"employee" + this.getId() + "\":" +
+                "\n  {" +
+                "\n    \"id\":" + this.getId() +
+                ",\n    \"name\":" + "\"" + this.getName() + "\"" +
+                ",\n    \"salary\":" + this.getSalary() +
+                "\n  }";
+    }
+
 }
