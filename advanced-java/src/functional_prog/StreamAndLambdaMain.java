@@ -1,4 +1,4 @@
-package funtional-prog;
+package functional_prog;
 
 import java.io.IOException;
 import java.io.PrintWriter;
