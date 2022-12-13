@@ -14,14 +14,13 @@ import java.util.Scanner;
 
 public class Exe9Main {
     public static void main(String[] args) {
-        PersonInterface personInterface = new PersonImplement();
-        AddressInterface addressInterface = new AddressImplement();
-        PhoneInterface phoneInterface = new PhoneImplement();
-        Address address = new Address();
-        Person person = new Person();
         boolean exit = false;
-        int keepGoing = 0;
         do {
+            PersonInterface personInterface = new PersonImplement();
+            AddressInterface addressInterface = new AddressImplement();
+            PhoneInterface phoneInterface = new PhoneImplement();
+            Address address = new Address();
+            Person person = new Person();
             Scanner scanner = new Scanner(System.in);
             System.out.println
                     ("""
@@ -92,7 +91,6 @@ public class Exe9Main {
         System.out.println("The person has only allowed 5 phones, for done with the phones type 0");
         System.out.println("Phone Format: ___-___-____");
         System.out.println("Type the phones:");
-
         int count = 1;
         while (count != 0) {
             String phone = scanner.next();

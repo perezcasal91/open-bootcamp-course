@@ -13,7 +13,7 @@ public class PersonImplement implements PersonInterface{
     private BufferedReader bufferedReader;
     private ArrayList<String> personArrayList;
     public PersonImplement() {
-        this.file = new File("src/homework/task7/resources/person.txt");
+        this.file = new File("src/homework/task6/exe9/resources/person.txt");
         this.personArrayList = new ArrayList<>();
     }
     @Override

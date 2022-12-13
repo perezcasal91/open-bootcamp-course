@@ -1,11 +1,11 @@
-package homework.task5;
+package homework.task7.database;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Theme5DataBase {
+public class CarDataBase {
     private final List<Object> dataBase;
-    public Theme5DataBase(){
+    public CarDataBase(){
         this.dataBase = new ArrayList<>();
     }
     public void add(Object element){

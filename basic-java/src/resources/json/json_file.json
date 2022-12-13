@@ -1,0 +1,25 @@
+{
+  "person1":
+  {
+    "firstName": "Elieser",
+    "lastName": "Perez Casal",
+    "age": 30
+  },
+  "person2":
+  {
+    "firstName": "Daylen",
+    "lastName": "Gonzalez Leon",
+    "age": 34
+  },
+  "phoneNumbers":
+  [
+    {
+      "type": "home",
+      "phone-number": "212 888-2365"
+    },
+    {
+      "type": "mobile",
+      "phone-number": "561 888-2765"
+    }
+  ]
+}

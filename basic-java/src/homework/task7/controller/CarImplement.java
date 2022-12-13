@@ -1,18 +1,25 @@
-package homework.task5;
+package homework.task7.controller;
+
+import homework.task7.model.Car;
+import homework.task7.database.CarDataBase;
+import homework.task7.model.CarSize;
+import homework.task7.model.CarWeightOrSpeed;
 
 import java.util.List;
 
 public class CarImplement implements CarInterface {
-    private final Theme5DataBase dataBase;
+    private final CarDataBase dataBase;
     public CarImplement(){
-        this.dataBase = new Theme5DataBase();
+        this.dataBase = new CarDataBase();
     }
     @Override
-    public Car createCar(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
+    public Car createCar(Integer id, String color, String manufacturer, String model, CarWeightOrSpeed weight,
+                         CarSize size, CarWeightOrSpeed speed) {
         return new Car(id, color, manufacturer, model, weight, size, speed);
     }
     @Override
-    public void saveCar(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
+    public void saveCar(Integer id, String color, String manufacturer, String model, CarWeightOrSpeed weight,
+                        CarSize size, CarWeightOrSpeed speed) {
         this.saveCar(createCar(id, color, manufacturer, model, weight, size, speed));
     }
     @Override
@@ -20,7 +27,8 @@ public class CarImplement implements CarInterface {
         this.dataBase.add(car);
     }
     @Override
-    public Car updateCar(Car car, String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
+    public Car updateCar(Car car, String color, String manufacturer, String model, CarWeightOrSpeed weight,
+                         CarSize size, CarWeightOrSpeed speed) {
         car.setColor(color);
         car.setManufacturer(manufacturer);
         car.setModel(model);

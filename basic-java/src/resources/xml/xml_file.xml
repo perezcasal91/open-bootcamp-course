@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module type="JAVA_MODULE" version="4">
+    <component inherit-compiler-output="true" name="NewModuleRootManager">
+        <exclude-output/>
+        <content url="file://$MODULE_DIR$">
+            <sourceFolder isTestSource="false" url="file://$MODULE_DIR$/src"/>
+        </content>
+        <orderEntry type="inheritedJdk"/>
+        <orderEntry forTests="false" type="sourceFolder"/>
+        <komyk name="2">
+            <user name="3">
+                <password name="4"/>
+            </user>
+            <user name="3">
+                <password name="4"/>
+            </user>
+        </komyk>
+    </component>
+</module>

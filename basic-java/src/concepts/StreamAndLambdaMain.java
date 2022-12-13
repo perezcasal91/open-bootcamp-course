@@ -3,7 +3,6 @@ package concepts;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.function.BinaryOperator;
@@ -11,49 +10,49 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class StreamMain {
+public class StreamAndLambdaMain {
 
     public static void main(String[] args) {
         Integer [] employeeIds = {1, 2};
         EmployeeDB employeeDB = new EmployeeDB();
-//        streamForEach(employeeDB);
-//        streamForEachSetPropertyUsingLambda(employeeDB);
-//        streamMapFindByIds(employeeIds, employeeDB);
-//        streamCollect(employeeDB);
-//        streamFilerMapFindByIds(employeeIds, employeeDB);
-//        streamFilerMapFindByIdsFindFirst(employeeIds, employeeDB);
-//        streamToArray(employeeDB);
-//        streamFlatMap();
-//        streamPeek(employeeDB, 50d);
-//        streamPeek(employeeDB, 500d);
-//        streamCount(employeeDB);
-//        streamIterateSkipLimit();
-//        streamSortedCompareByName(employeeDB);
-//        streamSimpleMin(employeeDB);
-//        streamMaxUsingComparatorBySalary(employeeDB);
-//        streamComparatorNaturalAndReverseOrder();
-//        streamDistinct();
-//        streamAllMatchAnyNone();
-//        streamMaxValue(employeeDB);
-//        streamCreation();
-//        streamAverageAndSum(employeeDB);
-//        streamReduce(employeeDB);
-//        streamJoin(employeeDB);
-//        streamToSet();
-//        streamToVectorCollection(employeeDB);
-//        streamSummarizingDouble(employeeDB);
-//        streamSummarizingDoubleUsingMap(employeeDB);
-//        streamPartitionBy(employeeDB);
-//        streamGroupBy(employeeDB);
-//        streamMapping(employeeDB);
-//        streamReducing(employeeDB);
-//        streamReducingAndGroupBy(employeeDB);
-//        streamGenerateAndIterate();
-//        streamWriteFile();
-//        streamWriteFileEmployee(employeeDB);
-//        streamReadFile();
-//        streamReadFileEmployee();
-//        streamTakeWhile();
+        streamForEach(employeeDB);
+        streamForEachSetPropertyUsingLambda(employeeDB);
+        streamMapFindByIds(employeeIds, employeeDB);
+        streamCollect(employeeDB);
+        streamFilerMapFindByIds(employeeIds, employeeDB);
+        streamFilerMapFindByIdsFindFirst(employeeIds, employeeDB);
+        streamToArray(employeeDB);
+        streamFlatMap();
+        streamPeek(employeeDB, 50d);
+        streamPeek(employeeDB, 500d);
+        streamCount(employeeDB);
+        streamIterateSkipLimit();
+        streamSortedCompareByName(employeeDB);
+        streamSimpleMinById(employeeDB);
+        streamMaxUsingComparatorBySalary(employeeDB);
+        streamComparatorNaturalAndReverseOrder();
+        streamDistinct();
+        streamAllMatchAnyNone();
+        streamMaxValue(employeeDB);
+        streamCreation();
+        streamAverageAndSum(employeeDB);
+        streamReduce(employeeDB);
+        streamJoin(employeeDB);
+        streamToSet();
+        streamToVectorCollection(employeeDB);
+        streamSummarizingDouble(employeeDB);
+        streamSummarizingDoubleUsingMap(employeeDB);
+        streamPartitionBy(employeeDB);
+        streamGroupBy(employeeDB);
+        streamMapping(employeeDB);
+        streamReducing(employeeDB);
+        streamReducingAndGroupBy(employeeDB);
+        streamGenerateAndIterate();
+        streamWriteFile();
+        streamWriteFileEmployee(employeeDB);
+        streamReadFile();
+        streamReadFileEmployee();
+        streamTakeWhile();
         streamDropWhile();
     }
     private static final Employee[] listEmployees =
@@ -120,11 +119,11 @@ public class StreamMain {
                 .toList().forEach(System.out::println);
     }
     private static void streamSimpleMinById(EmployeeDB employeeDB){
-        System.out.println(employeeDB.employeeList.stream().min((e1, e2) -> e1.getId() - e2.getId())
+        System.out.println(employeeDB.employeeList.stream().min(Comparator.comparingInt(Employee::getId))
                         .orElseThrow(NoSuchElementException::new));
     }
     private static void streamMaxUsingComparatorBySalary(EmployeeDB employeeDB){
-        System.out.println(employeeDB.employeeList.stream().max(Comparator.comparing(Employee::getSalary))
+        System.out.println(employeeDB.employeeList.stream().max(Comparator.comparingDouble(Employee::getSalary))
                 .orElseThrow(NoSuchElementException::new));
     }
     private static void streamComparatorNaturalAndReverseOrder(){

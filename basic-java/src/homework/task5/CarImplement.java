@@ -58,5 +58,4 @@ public class CarImplement implements CarInterface {
     public List<Car> findAll() {
         return this.dataBase.getAll().stream().map(object-> ((Car)object)).toList();
     }
-
 }

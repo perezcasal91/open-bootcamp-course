@@ -1,12 +1,16 @@
-package homework.task5;
+package homework.task7.controller;
+
+import homework.task7.model.Car;
+import homework.task7.model.CarSize;
+import homework.task7.model.CarWeightOrSpeed;
 
 import java.util.List;
 
 public interface CarInterface {
-    Car createCar(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed);
-    void saveCar(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed);
+    Car createCar(Integer id, String color, String manufacturer, String model, CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed);
+    void saveCar(Integer id, String color, String manufacturer, String model, CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed);
     void saveCar(Car car);
-    Car updateCar(Car car, String color, String manufacturer, String model, Double weight, Float size, Integer speed);
+    Car updateCar(Car car, String color, String manufacturer, String model, CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed);
     void updateCar(Car car, Car updated);
     void updateCar(Integer id, Car updated);
     void deleteCar(Car car);

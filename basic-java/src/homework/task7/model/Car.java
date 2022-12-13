@@ -1,19 +1,15 @@
-package homework.task5;
+package homework.task7.model;
 
 public class Car {
-
-    // Attributes
     private Integer id;
     private String color;
     private String manufacturer;
     private String model;
-    private Double weight;
-    private Float size;
-    private Integer speed;
-    // Empty Constructor
+    private CarWeightOrSpeed weight;
+    private CarSize size;
+    private CarWeightOrSpeed speed;
     public Car(){}
-    // Constructor with parameter
-    public Car(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed){
+    public Car(Integer id, String color, String manufacturer, String model, CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed){
         this.id = id;
         this.color = color;
         this.manufacturer = manufacturer;
@@ -22,7 +18,6 @@ public class Car {
         this.size = size;
         this.speed = speed;
     }
-    // Getter and Setter
     public Integer getId() {
         return id;
     }
@@ -47,34 +42,26 @@ public class Car {
     public void setModel(String model) {
         this.model = model;
     }
-    public double getWeight() {
+    public CarWeightOrSpeed getWeight() {
         return weight;
     }
-    public void setWeight(double weight) {
+    public void setWeight(CarWeightOrSpeed weight) {
         this.weight = weight;
     }
-    public float getSize() {
+    public CarSize getSize() {
         return size;
     }
-    public void setSize(float size) {
+    public void setSize(CarSize size) {
         this.size = size;
     }
-    public Integer getSpeed() {
+    public CarWeightOrSpeed getSpeed() {
         return speed;
     }
-    public void setSpeed(Integer speed) {
+    public void setSpeed(CarWeightOrSpeed speed) {
         this.speed = speed;
     }
-    // To String Method
     @Override
     public String toString() {
-        return "Car {" +
-                " color=" + getColor() +
-                ", manufacturer=" + getManufacturer() +
-                ", model=" + getModel() +
-                ", weight=" + getWeight() +
-                ", size=" + getSize() +
-                ", speed=" + getSpeed() +
-                 " } ";
+        return this.getColor();
     }
 }

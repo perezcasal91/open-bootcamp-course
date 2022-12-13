@@ -1,1 +1,5 @@
 
+Person { name=daylen, age=34, address=[yu, Jacksonville, Alabama, Armenia], phones=[456-789-6789] } 
+Person { name=eli, age=31, address=[yu, Jacksonville, Alabama, Armenia], phones=[456-789-6789, 567-567-5678, 67-89-7890] } 
+Person { name=er, age=34, address=[we, Miami, Georgia, Australia], phones=[23-23-23] } 
+Person { name=rt, age=12, address=[wer 4334, Jacksonville, Georgia, Belgium], phones=[12-34-5678] } 
