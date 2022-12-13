@@ -1,4 +1,4 @@
-package concepts;
+package funtional-prog;
 
 import java.io.IOException;
 import java.io.PrintWriter;
