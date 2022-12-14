@@ -1,5 +1,12 @@
+## Folders ##
+target/
 out/
 .idea/
+## Generic Files ##
 *.iws
 *.iml
 *.ipr
+## Specific Files ##
+HELP.md
+mvnw.cmd
+mvnw
