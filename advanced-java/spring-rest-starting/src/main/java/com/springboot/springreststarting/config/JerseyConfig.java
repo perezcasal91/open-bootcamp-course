@@ -1,4 +1,4 @@
-package com.springboot.config;
+package com.springboot.springreststarting.config;
 
 import jakarta.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig (){
-        this.packages("./com.springboot.controllers");
+        this.packages("com.springboot.springreststarting.controllers");
     }
 }

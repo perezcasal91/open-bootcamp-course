@@ -1,22 +1,14 @@
-package com.springboot.models;
+package com.springboot.springreststarting.models;
 
 public class CarModel {
-    private Integer id;
     private String color;
     private String manufacturer;
     private String model;
     public CarModel(){}
-    public CarModel(Integer id, String color, String manufacturer, String model){
-        this.id = id;
+    public CarModel(String color, String manufacturer, String model){
         this.color = color;
         this.manufacturer = manufacturer;
         this.model = model;
-    }
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
     }
     public String getColor() {
         return color;

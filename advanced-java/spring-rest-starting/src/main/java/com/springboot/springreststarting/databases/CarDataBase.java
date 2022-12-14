@@ -1,4 +1,4 @@
-package com.springboot.databases;
+package com.springboot.springreststarting.databases;
 
 import java.util.ArrayList;
 import java.util.List;

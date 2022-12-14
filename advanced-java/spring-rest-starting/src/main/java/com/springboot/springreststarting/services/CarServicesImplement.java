@@ -1,27 +1,33 @@
-package com.springboot.services;
+package com.springboot.springreststarting.services;
 
-import com.springboot.databases.CarDataBase;
-import com.springboot.models.CarModel;
+import com.springboot.springreststarting.databases.CarDataBase;
+import com.springboot.springreststarting.models.CarModel;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-
+@Service
 public class CarServicesImplement implements CarServicesInterface {
     private final CarDataBase dataBase;
     public CarServicesImplement(){
         this.dataBase = new CarDataBase();
     }
     @Override
-    public CarModel createCar(Integer id, String color, String manufacturer, String model) {
-        return new CarModel(id, color, manufacturer, model);
+    public CarModel createCar(String color, String manufacturer, String model) {
+        return new CarModel(color, manufacturer, model);
     }
     @Override
-    public void saveCar(Integer id, String color, String manufacturer, String model) {
-        this.saveCar(createCar(id, color, manufacturer, model));
+    public void saveCar(String color, String manufacturer, String model) {
+        this.saveCar(createCar(color, manufacturer, model));
     }
     @Override
     public void saveCar(CarModel car) {
         this.dataBase.add(car);
+    }
+    @Override
+    public void fillCars(){
+        saveCar("black", "Hunday", "XYZ");
+        saveCar("white", "Honda", "ASD");
     }
     @Override
     public CarModel updateCar(CarModel car, String color, String manufacturer, String model) {
@@ -35,23 +41,13 @@ public class CarServicesImplement implements CarServicesInterface {
         this.dataBase.update(car, updated);
     }
     @Override
-    public void updateCar(Integer id, CarModel updated) {
-        this.dataBase.update(findCarById(id), updated);
-    }
-    @Override
     public void deleteCar(CarModel car) {
         this.dataBase.delete(car);
     }
     @Override
-    public CarModel findCarById(Integer id) {
-        return this.findAll().stream().filter(carModel ->
-                Objects.equals(carModel.getId(), id))
-                .findFirst().orElse(null);
-    }
-    @Override
     public CarModel findCarByModel(String model) {
         return this.findAll().stream().filter(carModel ->
-                Objects.equals(carModel.getModel(), model))
+                carModel.getModel().equalsIgnoreCase(model))
                 .findFirst().orElse(null);
     }
     @Override
