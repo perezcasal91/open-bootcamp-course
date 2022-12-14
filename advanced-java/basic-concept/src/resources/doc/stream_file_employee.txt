@@ -1,0 +1,3 @@
+Employee{id=1, name='Kyle', salary=10000.0}
+Employee{id=2, name='Ros', salary=20000.0}
+Employee{id=3, name='Kle', salary=30000.0}
