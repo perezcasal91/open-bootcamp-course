@@ -2,7 +2,7 @@ package behavior.mediator;
 
 import java.util.ArrayList;
 
-public class MediatorMain {
+public class AbstractMediatorMain {
     public static void main(String[] args) {
         Mediator mediator = new ConcreteMediator();
         College collegeA = new ConcreteCollegeA();
