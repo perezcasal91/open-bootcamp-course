@@ -2,10 +2,7 @@ package behavior.observer;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -24,6 +21,8 @@ public class EditorMain {
                 add(new EventManager().subscribe("open", loggingListener));
         editor.openFile("src/resources/doc/observer_file.txt");
         editor.saveFile("src/resources/doc/observer_file.txt");
+        editor.getEventManagers().
+                add(new EventManager().unsubscribe("unsubscribe", emailAlertListener));
     }
 }
 class Editor {
@@ -39,7 +38,9 @@ class Editor {
     }
     public void saveFile(String path) {
         try {
-            this.file.createNewFile();
+            PrintWriter printWriter = new PrintWriter(path);
+            printWriter.flush();
+            printWriter.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -52,18 +53,14 @@ class Editor {
     }
 }
 class EventManager {
-    private HashMap<String,EventListener> eventListeners;
+    private final HashMap<String,EventListener> eventListeners;
     public EventManager() {
         this.eventListeners = new HashMap<>();
     }
     public EventManager subscribe(String eventType, EventListener eventListener) {
-        this.eventListeners.put(eventType, eventListener);
-        return this;
-    }
+        this.eventListeners.put(eventType, eventListener);return this;}
     public EventManager unsubscribe(String eventType, EventListener eventListener) {
-        this.eventListeners.remove(eventType, eventListener);
-        return this;
-    }
+        this.eventListeners.remove(eventType, eventListener);return this;}
     public void notify(String eventType, String data) {
         eventListeners.forEach((type,event)-> {
             if (type.equals(eventType)) {
@@ -76,8 +73,8 @@ interface EventListener {
     void update(String fileName);
 }
 class EmailAlertListener implements EventListener {
-    private String email;
-    private String message;
+    private final String email;
+    private final String message;
     public EmailAlertListener(String email, String message) {
         this.email = email;
         this.message = message;
@@ -90,15 +87,16 @@ class EmailAlertListener implements EventListener {
     }
 }
 class LoggingListener implements EventListener {
-    private File file;
-    private String message;
+    private final String logFileName;
+    private final String message;
     public LoggingListener(String logFileName, String message) {
-        this.file = new File(logFileName);
+        this.logFileName = logFileName;
         this.message = message;
     }
     @Override
     public void update(String fileName) {
         System.out.println("File: " + fileName);
+        System.out.println("File: " + logFileName);
         System.out.println("Message: " + message);
     }
 }

@@ -7,8 +7,6 @@ public class ApplicationMain {
         System.out.println(context.executeStrategy(8,2, "subtract"));
         System.out.println(context.executeStrategy(3,3, "multiply"));
     }
-
-
 }
 interface Strategy {
     int execute(int a, int b);
