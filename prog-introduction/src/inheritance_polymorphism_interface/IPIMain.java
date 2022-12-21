@@ -1,6 +1,9 @@
-package herite_polimorfismo_interface;
+package inheritance_polymorphism_interface;
 
-public class InheritanceMain {
+/**
+ * Init with inheritance, polymorphism and interface
+ */
+public class IPIMain {
     public static void main(String[] args) {
         ElectricCar cElectricCar = new ElectricCar();
         cElectricCar.setPlate("XXX");
@@ -11,7 +14,10 @@ public class InheritanceMain {
         cElectricCar.verifyMotor("WES");
     }
 }
-abstract class Vehicle {
+interface VehicleInterface {
+    void verifyPlate(String plate);
+}
+abstract class Vehicle implements VehicleInterface{
     private String plate;
     private int maxSpeed;
     public Vehicle() {
@@ -20,9 +26,13 @@ abstract class Vehicle {
     public void setPlate(String plate) {this.plate = plate;}
     public int getMaxSpeed() {return maxSpeed;}
     public void setMaxSpeed(int maxSpeed) {this.maxSpeed = maxSpeed;}
+    @Override
     public abstract void verifyPlate(String plate);
 }
-abstract class Car extends Vehicle {
+interface CarInterface {
+    void verifyMotor(String motor);
+}
+abstract class Car extends Vehicle implements CarInterface{
     private String motor;
     public Car() {}
     @Override
@@ -35,6 +45,7 @@ abstract class Car extends Vehicle {
     }
     public String getMotor() {return motor;}
     public void setMotor(String motor) {this.motor = motor;}
+    @Override
     public abstract void verifyMotor(String motor);
 }
 class ElectricCar extends Car {
