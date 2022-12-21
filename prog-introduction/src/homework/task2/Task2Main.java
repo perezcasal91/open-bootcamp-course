@@ -1,6 +1,6 @@
-package task2.main;
+package homework.task2.main;
 
-import task2.module.*;
+import homework.task2.module.*;
 
 public class Main {
     public static void main(String[] args) {
