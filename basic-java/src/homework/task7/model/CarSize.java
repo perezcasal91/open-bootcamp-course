@@ -3,7 +3,7 @@ package homework.task7.model;
 public class CarSize {
     private Integer length;
     private Integer width;
-    public CarSize(){}
+    public CarSize() {}
     public CarSize(Integer length, Integer width) {
         this.length = length;
         this.width = width;

@@ -2,8 +2,7 @@ package pop.abstract_class;
 
 public class ElectricCar extends Car {
     private String electricEngine;
-    public ElectricCar(){
-    }
+    public ElectricCar() {}
     public ElectricCar(String electricEngine){
         this.electricEngine = electricEngine;
     }
@@ -31,12 +30,12 @@ public class ElectricCar extends Car {
                 " } ";
     }
     @Override
-    public void speedUp(Integer quantity){
+    public void speedUp(Integer quantity) {
         quantity += 10;
         if(quantity > 0 && quantity < 100) {
-            var newSpeed = this.getSpeed() + quantity;
-            if (newSpeed < 250) {
-                super.setSpeed(newSpeed);
+            var vNnewSpeed = this.getSpeed() + quantity;
+            if (vNnewSpeed < 250) {
+                super.setSpeed(vNnewSpeed);
             }
         }
     }

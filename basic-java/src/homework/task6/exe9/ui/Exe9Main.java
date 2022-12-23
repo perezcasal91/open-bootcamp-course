@@ -14,14 +14,14 @@ import java.util.Scanner;
 
 public class Exe9Main {
     public static void main(String[] args) {
-        boolean exit = false;
+        boolean bExit = false;
         do {
-            PersonInterface personInterface = new PersonImplement();
-            AddressInterface addressInterface = new AddressImplement();
-            PhoneInterface phoneInterface = new PhoneImplement();
-            Address address = new Address();
-            Person person = new Person();
-            Scanner scanner = new Scanner(System.in);
+            PersonInterface cPersonInterface = new PersonImplement();
+            AddressInterface cAddressInterface = new AddressImplement();
+            PhoneInterface cPhoneInterface = new PhoneImplement();
+            Address cAddress = new Address();
+            Person cPerson = new Person();
+            Scanner cScanner = new Scanner(System.in);
             System.out.println
                     ("""
                     Select an Option:
@@ -30,21 +30,21 @@ public class Exe9Main {
                         3-Exit
                     """);
             try {
-                int option = Integer.parseInt(scanner.nextLine());
-                switch (option) {
+                int iOption = Integer.parseInt(cScanner.nextLine());
+                switch (iOption) {
                     case 1 -> {
                         try {
                             System.out.println("Type the name:");
-                            String name = scanner.nextLine();
-                            person.setName(name);
+                            String sName = cScanner.nextLine();
+                            cPerson.setName(sName);
                             System.out.println("Type the age:");
-                            Integer age = Integer.parseInt(scanner.nextLine());
-                            person.setAge(age);
-                            addressHandler(addressInterface, address, scanner);
-                            phoneHandler(phoneInterface, scanner);
-                            person.setAddress(address);
-                            person.setPhones(phoneInterface.getPhones());
-                            personInterface.savePerson(person);
+                            Integer iAge = Integer.parseInt(cScanner.nextLine());
+                            cPerson.setAge(iAge);
+                            addressHandler(cAddressInterface, cAddress, cScanner);
+                            phoneHandler(cPhoneInterface, cScanner);
+                            cPerson.setAddress(cAddress);
+                            cPerson.setPhones(cPhoneInterface.getPhones());
+                            cPersonInterface.savePerson(cPerson);
                         } catch (InputMismatchException inputMismatchException) {
                             System.out.println("You have to enter a Number");
                         } catch (Exception indexOutOfBoundsException) {
@@ -53,57 +53,56 @@ public class Exe9Main {
                     }
                     case 2 -> {
                         System.out.println("Listing the Persons");
-                        personInterface.findAllPersons().forEach((System.out::println));
+                        cPersonInterface.findAllPersons().forEach((System.out::println));
                     }
                     case 3 -> {
-                        exit = true;
+                        bExit = true;
                         System.out.println("Exiting");
                     }
                     default -> System.out.println("You have to select a Option: 1, 2 or 3");
                 }
-            } catch (InputMismatchException inputMismatchException){
+            } catch (InputMismatchException inputMismatchException) {
                 System.out.println("You have to enter a number: 1, 2 or 3");
-            } catch (NumberFormatException numberFormatException){
+            } catch (NumberFormatException numberFormatException) {
                 System.out.println("You have to select a Option: 1, 2 or 3");
             }
-        } while (!exit);
+        } while (!bExit);
     }
     private static void addressHandler(AddressInterface addressInterface, Address address, Scanner scanner) {
         System.out.println("For the address of the person first you have to type the Street" +
             "then you must to select the options that we show you in the screen:");
         System.out.println("Type the street:");
-        String street = scanner.nextLine();
-        address.setStreet(street);
+        String sStreet = scanner.nextLine();
+        address.setStreet(sStreet);
         System.out.println("Select the city:");
-        addressInterface.getCity().forEach((key, value) -> System.out.println(key + ":" + value));
-        int city = Integer.parseInt(scanner.nextLine());
-        address.setCity(addressInterface.getCity(city));
+        addressInterface.getCities().forEach((key, value) -> System.out.println(key + ":" + value));
+        int iCity = Integer.parseInt(scanner.nextLine());
+        address.setCity(addressInterface.getCity(iCity));
         System.out.println("Select the state:");
-        addressInterface.getState().forEach((key, value) -> System.out.println(key + ":" + value));
-        int state = Integer.parseInt(scanner.nextLine());
-        address.setState(addressInterface.getState(state));
+        addressInterface.getStates().forEach((key, value) -> System.out.println(key + ":" + value));
+        int iState = Integer.parseInt(scanner.nextLine());
+        address.setState(addressInterface.getState(iState));
         System.out.println("Select the country:");
-        addressInterface.getCountry().forEach((key, value) -> System.out.println(key + ":" + value));
-        int country = Integer.parseInt(scanner.nextLine());
-        address.setCountry(addressInterface.getCountry(country));
+        addressInterface.getCountries().forEach((key, value) -> System.out.println(key + ":" + value));
+        int iCountry = Integer.parseInt(scanner.nextLine());
+        address.setCountry(addressInterface.getCountry(iCountry));
     }
     private static void phoneHandler(PhoneInterface phoneInterface, Scanner scanner) throws Exception {
         System.out.println("The person has only allowed 5 phones, for done with the phones type 0");
         System.out.println("Phone Format: ___-___-____");
         System.out.println("Type the phones:");
-        int count = 1;
-        while (count != 0) {
-            String phone = scanner.next();
-            if (!phone.equals("0")) {
-                phoneInterface.addPhone(phone);
+        int iCount = 1;
+        while (iCount != 0) {
+            String sPhone = scanner.next();
+            if (!sPhone.equals("0")) {
+                phoneInterface.addPhone(sPhone);
             } else {
                 break;
             }
-            if (count == 6) {
+            if (iCount == 6) {
                 break;
             }
-            count++;
+            iCount++;
         }
     }
-
 }

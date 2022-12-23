@@ -1,6 +1,6 @@
 package homework.task4;
 
-public class SmartWatch extends SmartDevice{
+public class SmartWatch extends SmartDevice {
     private String form;
     private String strap;
     public SmartWatch(){}
@@ -8,7 +8,9 @@ public class SmartWatch extends SmartDevice{
         this.form = form;
         this.strap = strap;
     }
-    public SmartWatch(String brand, String model, String color, String manufacturer, String operativeSystem, boolean sensors, String dimensions, String form, String strap) {
+    public SmartWatch(String brand, String model, String color, String manufacturer,
+                      String operativeSystem, boolean sensors, String dimensions,
+                      String form, String strap) {
         super(brand, model, color, manufacturer, operativeSystem, sensors, dimensions);
         this.form = form;
         this.strap = strap;

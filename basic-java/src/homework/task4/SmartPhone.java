@@ -1,6 +1,6 @@
 package homework.task4;
 
-public class SmartPhone extends SmartDevice{
+public class SmartPhone extends SmartDevice {
     private boolean wireless;
     private String broadband;
     private boolean frontCamera;
@@ -12,7 +12,9 @@ public class SmartPhone extends SmartDevice{
         this.frontCamera = frontCamera;
         this.backCamera = backCamera;
     }
-    public SmartPhone(String brand, String model, String color, String manufacturer, String operativeSystem, boolean sensors, String dimensions, boolean wireless, String broadband, boolean frontCamera, boolean backCamera) {
+    public SmartPhone(String brand, String model, String color, String manufacturer,
+                      String operativeSystem, boolean sensors, String dimensions,
+                      boolean wireless, String broadband, boolean frontCamera, boolean backCamera) {
         super(brand, model, color, manufacturer,operativeSystem, sensors, dimensions);
         this.wireless = wireless;
         this.broadband = broadband;

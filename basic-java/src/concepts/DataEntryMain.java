@@ -1,73 +1,90 @@
 package concepts;
 
 import java.io.*;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
+/**
+ * Class using the Objects InputStream, BufferedInputStream.
+ */
 public class DataEntryMain {
     public static void main(String[] args) {
-        inputStreamFileReadAll();
-        inputStreamFileReadByArray();
-        bufferStreamFileReadAll();
-        bufferStreamFileReadByArray();
+        String sFilePath = "src/resources/doc/FileStream.txt";
+        inputStreamFileReadAll(sFilePath);
+        inputStreamFileReadByArray(sFilePath);
+        bufferStreamFileReadAll(sFilePath);
+        bufferStreamFileReadByArray(sFilePath);
     }
-    private static void inputStreamFileReadAll() {
-        try {
-            InputStream inputFile = new FileInputStream("src/resources/doc/FileStream.txt");
-            byte [] data = inputFile.readAllBytes();
-            for (byte b: data) {
-                System.out.print((char) b);
+
+    /**
+     * Function for read a txt file.
+     * The function make use of the object InputStream,
+     * and read the file all at a once.
+     * @param filePath The address of the file to read.
+     */
+    private static void inputStreamFileReadAll(String filePath) {
+        try (InputStream isInput = new FileInputStream(filePath)) {
+            byte [] abyData = isInput.readAllBytes();
+            for (byte byValue: abyData) {
+                System.out.print((char) byValue);
             }
-        } catch (FileNotFoundException fileNotFoundException){
+        } catch (IOException fileNotFoundException) {
             System.out.println(fileNotFoundException.getMessage());
-        } catch (IOException ioException) {
-            System.out.println(ioException.getMessage());
         }
     }
-    private static void inputStreamFileReadByArray() {
-        try {
-            InputStream inputFile = new FileInputStream("src/resources/doc/FileStream.txt");
-            byte[] data = new byte[5];
-            int d = inputFile.read(data);
-            while (d != -1) {
-                for (byte c: data) {
-                    System.out.print((char) c);
+    /**
+     * Function for read a txt file.
+     * The function make use of the object InputStream,
+     * and read the file by steps.
+     * @param filePath The address of the file to read.
+     */
+    private static void inputStreamFileReadByArray(String filePath) {
+        try (InputStream isInput = new FileInputStream(filePath)) {
+            byte [] abyData = new byte[5];
+            int iRead = isInput.read(abyData);
+            while (iRead != -1) {
+                for (byte byValue: abyData) {
+                    System.out.print((char) byValue);
                 }
-                d = inputFile.read(data);
+                iRead = isInput.read(abyData);
             }
-        } catch (FileNotFoundException fileNotFoundException) {
+        } catch (IOException fileNotFoundException) {
             System.out.println(fileNotFoundException.getMessage());
-        } catch (IOException ioException) {
-            System.out.println(ioException.getMessage());
         }
     }
-    private static void bufferStreamFileReadAll() {
-        try {
-            InputStream inputFile = new FileInputStream("src/resources/doc/FileStream.txt");
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputFile);
-            byte [] data = bufferedInputStream.readAllBytes();
-            for (byte b: data) {
-                System.out.print((char) b);
+    /**
+     * Function for read a txt file.
+     * The function make use of the object InputStream, BufferedInputStream,
+     * and read the file all at a once.
+     * @param filePath The address of the file to read.
+     */
+    private static void bufferStreamFileReadAll(String filePath) {
+        try (InputStream isInput = new FileInputStream(filePath)) {
+            BufferedInputStream bisBuffered = new BufferedInputStream(isInput);
+            byte [] abyData = bisBuffered.readAllBytes();
+            for (byte byValue: abyData) {
+                System.out.print((char) byValue);
             }
-        } catch (FileNotFoundException fileNotFoundException){
+            bisBuffered.close();
+        } catch (IOException fileNotFoundException) {
             System.out.println(fileNotFoundException.getMessage());
-        } catch (IOException ioException) {
-            System.out.println(ioException.getMessage());
         }
     }
-    private static void bufferStreamFileReadByArray() {
-        try {
-            InputStream inputFile = new FileInputStream("src/resources/doc/FileStream.txt");
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputFile);
-            int d = bufferedInputStream.read();
-            while (d != -1) {
-                System.out.print((char) d);
-                d = inputFile.read();
+    /**
+     * Function for read a txt file.
+     * The function make use of the object InputStream, BufferedInputStream,
+     * and read the file line by line.
+     * @param filePath The address of the file to read.
+     */
+    private static void bufferStreamFileReadByArray(String filePath) {
+        try (InputStream isInput = new FileInputStream(filePath)) {
+            BufferedInputStream bisBuffered = new BufferedInputStream(isInput);
+            int iRead = bisBuffered.read();
+            while (iRead != -1) {
+                System.out.print((char) iRead);
+                iRead = bisBuffered.read();
             }
-        } catch (FileNotFoundException fileNotFoundException) {
+            bisBuffered.close();
+        } catch (IOException fileNotFoundException) {
             System.out.println(fileNotFoundException.getMessage());
-        } catch (IOException ioException) {
-            System.out.println(ioException.getMessage());
         }
     }
 }

@@ -1,16 +1,21 @@
 package concepts;
 
+/**
+ * Init with Arrays.
+ * Create two arrays, integer and string.
+ * Looping though the arrays.
+ */
 public class ArraysMain {
     public static void main(String[] args) {
-        Integer [] numbers = new Integer[5];
-        String  [] strings = new String[]{"a", "b", "c", "d", "e"};
+        Integer [] iNumbers = new Integer[5];
+        String  [] sStrings = {"a", "b", "c", "d", "e"};
         for (int i = 0; i < 5; i++) {
-            numbers[i] = i + 1;
+            iNumbers[i] = i + 1;
         }
-        for (Integer number: numbers) {
+        for (Integer number: iNumbers) {
             System.out.println(number);
         }
-        for (String string: strings) {
+        for (String string: sStrings) {
             System.out.println(string);
         }
     }

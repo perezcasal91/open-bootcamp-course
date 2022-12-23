@@ -2,22 +2,20 @@ package pop.polymorphism;
 
 public class PolymorphismMain {
     public static void main(String[] args) {
-        // Declaring
-        Car car1 = new ElectricCar();
-        Car car2 = new HybridCar();
-        // Using the reserved word instanceof
-        if (!(car1 instanceof ElectricCar)){
+        Car cCar1 = new ElectricCar();
+        Car cCar2 = new HybridCar();
+        if (!(cCar1 instanceof ElectricCar)) {
             System.out.println("The car is electric");
-        } else if (car1 instanceof HybridCar) {
+        } else if (cCar1 instanceof HybridCar) {
             System.out.println("The car is hybrid");
-        }else {
+        } else {
             System.out.println("The car is not hybrid");
         }
-        if (!(car2 instanceof HybridCar)){
+        if (!(cCar2 instanceof HybridCar)) {
             System.out.println("The car is hybrid");
-        }else if (car2 instanceof ElectricCar) {
+        }else if (cCar2 instanceof ElectricCar) {
             System.out.println("The car is electric");
-        }else {
+        } else {
             System.out.println("The car is not electric");
         }
     }

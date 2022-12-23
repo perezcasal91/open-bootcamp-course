@@ -2,13 +2,12 @@ package pop.polymorphism;
 
 public class ElectricCar extends Car {
     private String electricEngine;
-    public ElectricCar(){
-    }
+    public ElectricCar() {}
     public ElectricCar(String electricEngine){
         this.electricEngine = electricEngine;
     }
     public ElectricCar(String color, String manufacturer, String model, Double weight,
-                       Float size, Integer speed, String electricEngine){
+                       Float size, Integer speed, String electricEngine) {
         super(color, manufacturer, model, weight, size, speed);
         this.electricEngine = electricEngine;
     }
@@ -19,7 +18,7 @@ public class ElectricCar extends Car {
         this.electricEngine = electricEngine;
     }
     @Override
-    public void speedUp(Integer quantity){
+    public void speedUp(Integer quantity) {
         quantity += 10;
         super.speedUp(quantity);
     }

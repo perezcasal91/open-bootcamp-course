@@ -8,8 +8,9 @@ public class Car {
     private CarWeightOrSpeed weight;
     private CarSize size;
     private CarWeightOrSpeed speed;
-    public Car(){}
-    public Car(Integer id, String color, String manufacturer, String model, CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed){
+    public Car() {}
+    public Car(Integer id, String color, String manufacturer, String model,
+               CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed){
         this.id = id;
         this.color = color;
         this.manufacturer = manufacturer;

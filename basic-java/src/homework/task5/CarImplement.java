@@ -1,18 +1,19 @@
 package homework.task5;
 
 import java.util.List;
-
 public class CarImplement implements CarInterface {
     private final Theme5DataBase dataBase;
     public CarImplement(){
         this.dataBase = new Theme5DataBase();
     }
     @Override
-    public Car createCar(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
+    public Car createCar(Integer id, String color, String manufacturer, String model,
+                         Double weight, Float size, Integer speed) {
         return new Car(id, color, manufacturer, model, weight, size, speed);
     }
     @Override
-    public void saveCar(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
+    public void saveCar(Integer id, String color, String manufacturer, String model,
+                        Double weight, Float size, Integer speed) {
         this.saveCar(createCar(id, color, manufacturer, model, weight, size, speed));
     }
     @Override
@@ -20,7 +21,8 @@ public class CarImplement implements CarInterface {
         this.dataBase.add(car);
     }
     @Override
-    public Car updateCar(Car car, String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
+    public Car updateCar(Car car, String color, String manufacturer, String model,
+                         Double weight, Float size, Integer speed) {
         car.setColor(color);
         car.setManufacturer(manufacturer);
         car.setModel(model);
@@ -44,7 +46,7 @@ public class CarImplement implements CarInterface {
     @Override
     public Car findCarById(Integer id) {
         for (Object car : this.dataBase.getAll()) {
-            if (((Car)car).getId().equals(id)){
+            if (((Car)car).getId().equals(id)) {
                 return (Car)car;
             }
         }

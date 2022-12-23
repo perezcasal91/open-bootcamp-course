@@ -1,21 +1,24 @@
 package concepts;
 
+/**
+ * Class Main to test code others class.
+ */
 public class BasicMain {
     public static void main(String[] args) {
         // Conditionals
-        LoopsAndConditionals loopsAndConditionals = new LoopsAndConditionals();
-        loopsAndConditionals.ifElseFunction();
-        loopsAndConditionals.forFunction();
-        loopsAndConditionals.whileFunction();
-        loopsAndConditionals.switchFunction(3);
+        LoopsAndConditionals cLoopsAndConditionals = new LoopsAndConditionals();
+        cLoopsAndConditionals.ifElseFunction(4);
+        cLoopsAndConditionals.forFunction();
+        cLoopsAndConditionals.whileFunction();
+        cLoopsAndConditionals.switchFunction(3);
         // Read and Write XML
-        ReadWriteXML readWriteXML = new ReadWriteXML();
-        readWriteXML.write("user", "password");
-        readWriteXML.read();
+        ReadWriteXML cReadWriteXML = new ReadWriteXML();
+        cReadWriteXML.write("komyk", "config");
+        cReadWriteXML.read();
         // Read and Write JSON
-        ReadWriteJSON readWriteJSON = new ReadWriteJSON();
-        readWriteJSON.read();
-        readWriteJSON.readByKey();
-        readWriteJSON.createJSON();
+        ReadWriteJSON cReadWriteJSON = new ReadWriteJSON();
+        cReadWriteJSON.read();
+        cReadWriteJSON.readByKey();
+        cReadWriteJSON.createJSON();
     }
 }

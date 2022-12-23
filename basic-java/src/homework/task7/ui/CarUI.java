@@ -77,7 +77,7 @@ public class CarUI extends JDialog {
                 JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
     // Init Components
-    private void initComponents(){
+    private void initComponents() {
         this.carInterface = new CarImplement();
         fillTableColumnNames();
         fillTableRowValues();
@@ -86,7 +86,7 @@ public class CarUI extends JDialog {
         this.id = 1;
         this.row = -1;
     }
-    private void fillTableColumnNames(){
+    private void fillTableColumnNames() {
         this.tableNames = new String[6];
         this.tableNames[0] = "Color";
         this.tableNames[1] ="Manufacturer";
@@ -95,7 +95,7 @@ public class CarUI extends JDialog {
         this.tableNames[4] ="Size";
         this.tableNames[5] ="Speed";
     }
-    private void fillTableRowValues(){
+    private void fillTableRowValues() {
         List<Car> carArrayList = this.carInterface.findAll();
         this.tableValues = new Object[carArrayList.size()][6];
         for (int i = 0; i < this.tableValues.length; i++) {
@@ -122,14 +122,15 @@ public class CarUI extends JDialog {
                 addRow(this.carInterface.createCar(this.id, color, manufacturer, model, weight, size, speed));
             }
         } else {
-            JOptionPane.showMessageDialog(this, "The field can't be empty.", "Message", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "The field can't be empty.",
+                    "Message", JOptionPane.ERROR_MESSAGE);
         }
     }
-    private CarWeightOrSpeed getWeight(){
+    private CarWeightOrSpeed getWeight() {
         Integer value = (Integer)this.weightSpinner.getValue();
         String unit = Objects.requireNonNull(this.weightComboBox.getSelectedItem()).toString();
-        if (value > 500 && value < 2000 ){
-            if (this.weightComboBox.getSelectedIndex() != 0){
+        if (value > 500 && value < 2000 ) {
+            if (this.weightComboBox.getSelectedIndex() != 0) {
                 return new CarWeightOrSpeed(value, unit);
             } else {
                 JOptionPane.showMessageDialog(this, "You must to select a unit");
@@ -139,7 +140,7 @@ public class CarUI extends JDialog {
         }
         return null;
     }
-    private CarSize getCarSize(){
+    private CarSize getCarSize() {
         Integer lengthSpinnerValue = (Integer)this.sizeLengthSpinner.getValue();
         Integer widthSpinnerValue = (Integer)this.sizeWidthSpinner.getValue();
         if (lengthSpinnerValue > 0 && widthSpinnerValue > 0) {
@@ -149,11 +150,11 @@ public class CarUI extends JDialog {
         }
         return null;
     }
-    private CarWeightOrSpeed getSpeed(){
+    private CarWeightOrSpeed getSpeed() {
         Integer value = (Integer)this.speedSpinner.getValue();
         String unit = Objects.requireNonNull(this.speedComboBox.getSelectedItem()).toString();
-        if (value > 50 && value < 200 ){
-            if (this.speedComboBox.getSelectedIndex() != 0){
+        if (value > 50 && value < 200 ) {
+            if (this.speedComboBox.getSelectedIndex() != 0) {
                 return new CarWeightOrSpeed(value, unit);
             } else {
                 JOptionPane.showMessageDialog(this, "You must to select a unit");
@@ -163,16 +164,16 @@ public class CarUI extends JDialog {
         }
         return null;
     }
-    private boolean isTextFieldEmpty(){
+    private boolean isTextFieldEmpty() {
         boolean color = this.colorTextField.getText().isEmpty();
         boolean manufacturer = this.manufacturerTextField.getText().isEmpty();
         boolean model = this.modelTextField.getText().isEmpty();
         return !(color | manufacturer | model);
     }
-    private boolean isNullField(CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed){
+    private boolean isNullField(CarWeightOrSpeed weight, CarSize size, CarWeightOrSpeed speed) {
         return weight != null && size != null && speed != null;
     }
-    private void addRow(Car car){
+    private void addRow(Car car) {
         this.carInterface.saveCar(car);
         Object [] object = new Object[6];
         object[0] = car;
@@ -186,7 +187,7 @@ public class CarUI extends JDialog {
         clearField();
         JOptionPane.showMessageDialog(this, "Added successfully");
     }
-    private void clearField(){
+    private void clearField() {
         this.colorTextField.setText("");
         this.manufacturerTextField.setText("");
         this.modelTextField.setText("");
@@ -204,7 +205,7 @@ public class CarUI extends JDialog {
             filField(this.selectedCar);
         }
     }
-    private void filField(Car car){
+    private void filField(Car car) {
         this.colorTextField.setText(car.getColor());
         this.manufacturerTextField.setText(car.getManufacturer());
         this.modelTextField.setText(car.getModel());
@@ -225,18 +226,21 @@ public class CarUI extends JDialog {
             CarWeightOrSpeed speed = getSpeed();
             if (isTextFieldEmpty()) {
                 if (isNullField(weight, size, speed)) {
-                    updateRow(this.carInterface.updateCar(this.selectedCar, color, manufacturer, model, weight, size, speed));
+                    updateRow(this.carInterface.updateCar(this.selectedCar, color,
+                            manufacturer, model, weight, size, speed));
                     this.row = -1;
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "The field can't be empty.", "Message", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "The field can't be empty.",
+                        "Message", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             onDeleteAndUpdateMessage();
         }
     }
-    private void onDeleteAndUpdateMessage(){
-        JOptionPane.showMessageDialog(this, "You must select a row", "Message", JOptionPane.ERROR_MESSAGE);
+    private void onDeleteAndUpdateMessage() {
+        JOptionPane.showMessageDialog(this, "You must select a row",
+                "Message", JOptionPane.ERROR_MESSAGE);
     }
     private void updateRow(Car car){
         deleteRow();
@@ -244,7 +248,7 @@ public class CarUI extends JDialog {
         clearField();
         JOptionPane.showMessageDialog(this, "Updated successfully");
     }
-    private void insertRow(Car car){
+    private void insertRow(Car car) {
         Object [] object = new Object[6];
         object[0] = car;
         object[1] = car.getManufacturer();
@@ -259,11 +263,11 @@ public class CarUI extends JDialog {
         if (this.row != -1) {
             deleteRow();
             this.row = -1;
-        }  else {
+        } else {
             onDeleteAndUpdateMessage();
         }
     }
-    private void deleteRow(){
+    private void deleteRow() {
         this.carInterface.deleteCar(this.selectedCar);
         this.defaultTableModel.removeRow(this.row);
         clearField();
@@ -271,7 +275,6 @@ public class CarUI extends JDialog {
     private void onCancel() {
         dispose();
     }
-
     private void createUIComponents() {
         initComponents();
     }

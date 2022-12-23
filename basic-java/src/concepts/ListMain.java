@@ -1,29 +1,32 @@
 package concepts;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Init with the List.
+ * Using some methods.
+ */
 public class ListMain {
     public static void main(String[] args) {
-        List<Integer> numberList = new ArrayList<>();
-        List<String> stringList = new LinkedList<>();
+        List<Integer> lNumbers = new ArrayList<>();
+        List<String> lStrings = new LinkedList<>();
         for (int i = 0; i < 5; i++) {
-           numberList.add(i + 1);
+            lNumbers.add(i + 1);
         }
-        for (Integer number: numberList) {
+        for (Integer number: lNumbers) {
             System.out.println(number);
         }
         for (int i = 0; i < 5; i++) {
-            stringList.add(""+ i);
+            lStrings.add(""+ i);
         }
-        for (int i = 0; i < stringList.size(); i++) {
-            System.out.println(stringList.get(i));
+        for (String lString : lStrings) {
+            System.out.println(lString);
         }
-        System.out.println(numberList.contains(3));
-        System.out.println(numberList.indexOf(3));
-        System.out.println(numberList.isEmpty());
-        System.out.println(numberList.remove(4));
+        System.out.println(lNumbers.contains(3));
+        System.out.println(lNumbers.indexOf(3));
+        System.out.println(lNumbers.isEmpty());
+        System.out.println(lNumbers.remove(4));
     }
 }

@@ -9,10 +9,15 @@
         <komyk name="2">
             <user name="3">
                 <password name="4"/>
+                <password name="4"/>
+                <password name="4"/>
             </user>
             <user name="3">
                 <password name="4"/>
+                <password name="4"/>
+                <password name="4"/>
             </user>
+            <config name="3"/>
         </komyk>
     </component>
 </module>

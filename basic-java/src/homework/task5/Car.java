@@ -1,8 +1,6 @@
 package homework.task5;
 
 public class Car {
-
-    // Attributes
     private Integer id;
     private String color;
     private String manufacturer;
@@ -10,10 +8,9 @@ public class Car {
     private Double weight;
     private Float size;
     private Integer speed;
-    // Empty Constructor
     public Car(){}
-    // Constructor with parameter
-    public Car(Integer id, String color, String manufacturer, String model, Double weight, Float size, Integer speed){
+    public Car(Integer id, String color, String manufacturer, String model,
+               Double weight, Float size, Integer speed) {
         this.id = id;
         this.color = color;
         this.manufacturer = manufacturer;
@@ -22,7 +19,6 @@ public class Car {
         this.size = size;
         this.speed = speed;
     }
-    // Getter and Setter
     public Integer getId() {
         return id;
     }
@@ -65,7 +61,6 @@ public class Car {
     public void setSpeed(Integer speed) {
         this.speed = speed;
     }
-    // To String Method
     @Override
     public String toString() {
         return "Car {" +

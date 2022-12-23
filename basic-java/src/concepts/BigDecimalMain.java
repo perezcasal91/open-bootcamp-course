@@ -2,19 +2,23 @@ package concepts;
 
 import java.math.BigDecimal;
 
+/**
+ * Init with Big Decimal.
+ * Using some method of the Object BigDecimal.
+ */
 public class BigDecimalMain {
     public static void main(String[] args) {
-        BigDecimal bigDecimalA = new BigDecimal(5);
-        BigDecimal bigDecimalB = new BigDecimal(2);
-        BigDecimal resultSum = bigDecimalA.add(bigDecimalB);
-        System.out.println(resultSum);
-        BigDecimal resultSubtract = bigDecimalA.subtract(bigDecimalB);
-        System.out.println(resultSubtract);
-        BigDecimal resultMultiply = bigDecimalA.multiply(bigDecimalB);
-        System.out.println(resultMultiply);
-        BigDecimal resultDivide = bigDecimalA.divide(bigDecimalB);
-        System.out.println(resultDivide);
-        BigDecimal resultPow = bigDecimalA.pow(2);
-        System.out.println(resultPow);
+        BigDecimal bdA = new BigDecimal(5);
+        BigDecimal bdB = new BigDecimal(2);
+        BigDecimal bdResultSum = bdA.add(bdB);
+        System.out.println(bdResultSum);
+        BigDecimal bdResultSubtract = bdA.subtract(bdB);
+        System.out.println(bdResultSubtract);
+        BigDecimal bdResultMultiply = bdA.multiply(bdB);
+        System.out.println(bdResultMultiply);
+        BigDecimal bdResultDivide = bdA.divide(bdB);
+        System.out.println(bdResultDivide);
+        BigDecimal bdResultPow = bdA.pow(2);
+        System.out.println(bdResultPow);
     }
 }

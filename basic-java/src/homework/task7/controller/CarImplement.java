@@ -4,7 +4,6 @@ import homework.task7.model.Car;
 import homework.task7.database.CarDataBase;
 import homework.task7.model.CarSize;
 import homework.task7.model.CarWeightOrSpeed;
-
 import java.util.List;
 
 public class CarImplement implements CarInterface {
@@ -51,12 +50,11 @@ public class CarImplement implements CarInterface {
     }
     @Override
     public Car findCarById(Integer id) {
-        for (Object car : this.dataBase.getAll()) {
-            if (((Car)car).getId().equals(id)){
-                return (Car)car;
-            }
-        }
-        return null;
+       Car cCar = findAll().stream()
+               .filter(car -> car.getId().equals(id))
+               .findFirst()
+               .orElse(null);
+        return cCar;
     }
     @Override
     public boolean contain(Car car) {

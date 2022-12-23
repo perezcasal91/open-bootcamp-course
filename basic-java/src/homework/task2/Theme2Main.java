@@ -2,13 +2,13 @@ package homework.task2;
 
 public class Theme2Main {
     public static void main(String[] args) {
-        double price = 10.5d;
-        double ivaPercent = 16d;
-        double resultPrice = getPrice(price, ivaPercent);
-        System.out.println(resultPrice);
+        double dPrice = 10.5D;
+        double dIvaPercent = 16D;
+        double dResultPrice = getPrice(dPrice, dIvaPercent);
+        System.out.println(dResultPrice);
     }
     private static double getPrice(double price, double ivaPercent) {
-        double iva =  (ivaPercent / 100) * price;
-        return iva + price;
+        double dIva =  (ivaPercent / 100) * price;
+        return dIva + price;
     }
 }

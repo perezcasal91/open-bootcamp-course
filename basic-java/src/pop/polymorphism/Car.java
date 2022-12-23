@@ -1,18 +1,15 @@
 package pop.polymorphism;
 
 public class Car {
-
-    // Attributes
     private String color;
     private String manufacturer;
     private String model;
     private Double weight;
     private Float size;
     private Integer speed;
-    // Empty Constructor
-    public Car(){}
+    public Car() {}
     // Constructor with parameter
-    public Car(String color, String manufacturer, String model, Double weight, Float size, Integer speed){
+    public Car(String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
         this.color = color;
         this.manufacturer = manufacturer;
         this.model = model;
@@ -20,7 +17,6 @@ public class Car {
         this.size = size;
         this.speed = speed;
     }
-    // Getter and Setter
     public String getColor() {
         return color;
     }
@@ -57,7 +53,6 @@ public class Car {
     public void setSpeed(Integer speed) {
         this.speed = speed;
     }
-    // To String Method
     @Override
     public String toString() {
         return "Car {" +
@@ -69,12 +64,11 @@ public class Car {
                 ", speed=" + getSpeed() +
                  " } ";
     }
-    // Behavior
-    public void speedUp(Integer quantity){
-        if(quantity > 0 && quantity < 100){
-            var newSpeed = this.speed + quantity;
-            if (newSpeed < 250) {
-                setSpeed(newSpeed);
+    public void speedUp(Integer quantity) {
+        if(quantity > 0 && quantity < 100) {
+            var vNewSpeed = this.speed + quantity;
+            if (vNewSpeed < 250) {
+                setSpeed(vNewSpeed);
             }
         }
     }

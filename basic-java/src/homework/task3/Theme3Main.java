@@ -2,17 +2,17 @@ package homework.task3;
 
 public class Theme3Main {
     public static void main(String[] args) {
-        String[] names = {"Jon", "Klee", "Jess", "Kyle"};
-        StringBuilder combinedNames = new StringBuilder();
+        String [] aNames = {"Jon", "Klee", "Jess", "Kyle"};
+        StringBuilder sbCombinedNames = new StringBuilder();
         int index = 1;
-        for (String name : names) {
-            if (index != names.length) {
-                combinedNames.append(index).append("=").append(name).append(" ");
+        for (String sName : aNames) {
+            if (index != aNames.length) {
+                sbCombinedNames.append(index).append("=").append(sName).append(" ");
             } else {
-                combinedNames.append(index).append("=").append(name);
+                sbCombinedNames.append(index).append("=").append(sName);
             }
             index++;
         }
-        System.out.println("Combined Names: " + combinedNames);
+        System.out.println("Combined Names: " + sbCombinedNames);
     }
 }

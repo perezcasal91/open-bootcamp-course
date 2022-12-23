@@ -1,91 +1,87 @@
 package concepts;
 
+/**
+ * Init with Operators.
+ */
 public class Operators {
 
     // Operators
 
     // Arithmetic -> +-*/%
-    int anInt1 = 10;
-    int anInt2 = 5;
+    int i1 = 10;
+    int i2 = 5;
     // Sum -> 15
-    int resultSum = anInt1 + anInt2;
+    int resultSum = i1 + i2;
     // Diff -> 5
-    int resultDiff = anInt1 - anInt2;
+    int resultDiff = i1 - i2;
     // Div -> 2
-    float resultDiv = (float)(anInt1 / anInt2);
+    float resultDiv = (float)(i1 / i2);
     // Pow -> 100 000
-    int resultPow = anInt1 * anInt2;
+    int resultPow = i1 * i2;
     // Rest -> 0
-    int resultRes = anInt1 % anInt2;
+    int resultRes = i1 % i2;
 
     // Logical -> && || !
-    boolean aBoolean1 = false;
-    boolean aBoolean2 = true;
-    private void Logical(){
+    boolean b1 = false;
+    boolean b2 = true;
+    private void logical() {
         // &&
-        if (aBoolean1 == false && aBoolean2 == true){
+        if (b1 == false && b2 == true){
         }
         // ||
-        if (aBoolean1 == false || aBoolean2 == true){
+        if (b1 == false || b2 == true){
         }
         // !
-        if (!aBoolean1){
+        if (!b1){
         }
     }
     // Relational -> < > == != <= >=
-    private void Relational(){
+    private void relational() {
         // < -> false
-        if (anInt1 < anInt2){
-        }
+        if (i1 < i2) {}
         // > -> true
-        if (anInt1 > anInt2){
-        }
+        if (i1 > i2) {}
         // == -> false
-        if (anInt1 == anInt2){
-        }
+        if (i1 == i2) {}
         // != -> true
-        if (anInt1 != anInt2){
-        }
+        if (i1 != i2) {}
         // <= -> false
-        if (anInt1 <= anInt2){
-        }
+        if (i1 <= i2) {}
         // >= -> true
-        if (anInt1 >= anInt2){
-        }
+        if (i1 >= i2) {}
     }
     // Assignation -> = += -= /= *= %=
-    private void Assignation(){
+    private void assignation() {
         // = -> 20
-        anInt1 = 20;
+        i1 = 20;
         // += -> 21
-        anInt1 += 1;
+        i1 += 1;
         // -= -> 20
-        anInt1 -= 1;
+        i1 -= 1;
         // /= -> 10
-        anInt1 /= 2;
+        i1 /= 2;
         // *= -> 20
-        anInt1 *= 2;
+        i1 *= 2;
         // %= -> 0
-        anInt1 %= 2;
+        i1 %= 2;
     }
     // Increment -> ++
-    private void Increment(){
+    private void increment() {
         // var ++ -> 1
-        anInt1++;
+        i1++;
         // ++ var -> 2
-        ++anInt1;
+        ++i1;
     }
     // Decrement -> ++
-    private void Decrement(){
+    private void decrement() {
         // var -- -> 2
-        anInt1 --;
+        i1--;
         // -- var -> 1
-        --anInt1;
+        --i1;
     }
     // Concatenation -> +
-    String aString1 = "Hello";
-    String aString2 = "World";
+    String s1 = "Hello";
+    String s2 = "World";
     // + -> "HelloWorld"
-    String resultConcat = aString1 + aString2;
-
+    String resultConcat = s1 + s2;
 }

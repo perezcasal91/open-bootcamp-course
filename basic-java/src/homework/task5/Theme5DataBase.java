@@ -11,10 +11,10 @@ public class Theme5DataBase {
     public void add(Object element){
         this.dataBase.add(element);
     }
-    public void update(Object element, Object updated){
-        int carIndex = dataBase.indexOf(element);
-        if(carIndex != -1){
-            dataBase.set(carIndex, updated);
+    public void update(Object element, Object updated) {
+        int index = dataBase.indexOf(element);
+        if(index != -1) {
+            dataBase.set(index, updated);
         } else {
             System.out.println("The update wasn't successfully, the element not exist in the Data Base");
         }

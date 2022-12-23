@@ -2,7 +2,6 @@ package concepts;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,75 +13,107 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Class with an example of read and write an XML.
+ */
 public class ReadWriteXML {
     private final Document document;
     private final File file;
     public ReadWriteXML(){
         try {
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newDefaultInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            DocumentBuilderFactory dbfDocument = DocumentBuilderFactory.newDefaultInstance();
+            DocumentBuilder dbDocument = dbfDocument.newDocumentBuilder();
             this.file = new File("src/resources/xml/xml_file.xml");
-            this.document = documentBuilder.parse(this.file);
+            this.document = dbDocument.parse(this.file);
         } catch (ParserConfigurationException | IOException | SAXException e) {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Read the XML File, from the first Node.
+     */
     public void read(){
         readNode(this.document.getChildNodes());
     }
+
+    /**
+     * Recursive read of the xml,
+     * Read the Head Node and them go to his children.
+     * @param nodeList The first child node of the document.
+     */
     private void readNode(NodeList nodeList){
         for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                System.out.print(node.getNodeName() + ":");
-                for (int j = 0; j < node.getAttributes().getLength(); j++) {
-                    String nodeName = node.getAttributes().item(j).getNodeName();
-                    String nodeValue = node.getAttributes().item(j).getNodeValue();
-                    System.out.print(" " + nodeName + "=" + nodeValue);
+            Node cNode = nodeList.item(i);
+            if (cNode.getNodeType() == Node.ELEMENT_NODE) {
+                System.out.print(cNode.getNodeName() + ":");
+                for (int j = 0; j < cNode.getAttributes().getLength(); j++) {
+                    String sNodeName = cNode.getAttributes().item(j).getNodeName();
+                    String sNodeValue = cNode.getAttributes().item(j).getNodeValue();
+                    System.out.print(" " + sNodeName + "=" + sNodeValue);
                 }
                 System.out.println();
-                readNode(node.getChildNodes());
+                readNode(cNode.getChildNodes());
             }
         }
     }
-    public void write(String tag, String value){
+
+    /**
+     * Write a new node from the parent tag.
+     * @param tagParent Tag of the parent.
+     * @param valueChild New node.
+     */
+    public void write(String tagParent, String valueChild) {
         try {
-            int level = 0;
-            writeNode(this.document.getChildNodes(), tag, value, level);
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
+            int iLevel = 0;
+            writeNode(this.document.getChildNodes(), tagParent, valueChild, iLevel);
+            TransformerFactory tfTransformer = TransformerFactory.newInstance();
+            Transformer cTransformer = tfTransformer.newTransformer();
             this.document.normalizeDocument();
-            DOMSource domSource = new DOMSource(this.document);
-            StreamResult streamResult = new StreamResult(file);
-            transformer.transform(domSource, streamResult);
+            DOMSource dsDOM = new DOMSource(this.document);
+            StreamResult srStream = new StreamResult(file);
+            cTransformer.transform(dsDOM, srStream);
         } catch (TransformerException e) {
             throw new RuntimeException(e);
         }
     }
-    private void writeNode(NodeList nodeList, String tag, String value, int level){
+
+    /**
+     * Write the new node from the parent.
+     * Looping all the xml file until find the parent,
+     * when find it crete the new node with the indentation and the attribute name.
+     * @param nodeList The first child nodes of the document.
+     * @param tagParent Tag of the parent.
+     * @param valueChild New node.
+     * @param level The level where the node is, it's use for the indentation of the new node.
+     */
+    private void writeNode(NodeList nodeList, String tagParent, String valueChild, int level) {
         level++;
         for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                if (node.getNodeName().equals(tag)){
-                    Text lineJumpE = this.document.createTextNode("\n");
-                    Text newElementIndentationFirstTime = this.document.createTextNode(String.format("%" + (level * 4)  + "s", ""));
-                    Text newElementIndentation = this.document.createTextNode(String.format("%" + (4)  + "s", ""));
-                    if (node.getChildNodes().getLength() == 0 || node.getChildNodes().getLength() == 1) {
-                        node.appendChild(lineJumpE);
-                        node.appendChild(newElementIndentationFirstTime);
+            Node cNode = nodeList.item(i);
+            if (cNode.getNodeType() == Node.ELEMENT_NODE) {
+                if (cNode.getNodeName().equals(tagParent)) {
+                    Text cLineJumpE = this.document.createTextNode("\n");
+                    Text cNewElementIndentationFirstTime = this.document
+                                    .createTextNode(String.format("%" + (level * 4)  + "s", ""));
+                    Text cNewElementIndentation = this.document
+                            .createTextNode(String.format("%" + (4)  + "s", ""));
+                    if (cNode.getChildNodes().getLength() == 0 || cNode.getChildNodes().getLength() == 1) {
+                        cNode.appendChild(cLineJumpE);
+                        cNode.appendChild(cNewElementIndentationFirstTime);
                     } else {
-                        node.appendChild(newElementIndentation);
+                        cNode.appendChild(cNewElementIndentation);
                     }
-                    Element newElement = this.document.createElement(value);
-                    newElement.setAttribute("name", level + "");
-                    node.appendChild(newElement);
-                    Text lineJumpN = this.document.createTextNode("\n");
-                    node.appendChild(lineJumpN);
-                    Text nodeIndentation = this.document.createTextNode(String.format("%" + (level - 1) * 4 + "s", ""));
-                    node.appendChild(nodeIndentation);
+                    Element cNewElement = this.document.createElement(valueChild);
+                    cNewElement.setAttribute("name", level + "");
+                    cNode.appendChild(cNewElement);
+                    Text cLineJumpN = this.document.createTextNode("\n");
+                    cNode.appendChild(cLineJumpN);
+                    Text cNodeIndentation = this.document
+                            .createTextNode(String.format("%" + (level - 1) * 4 + "s", ""));
+                    cNode.appendChild(cNodeIndentation);
                 }
-                writeNode(node.getChildNodes(), tag, value, level);
+                writeNode(cNode.getChildNodes(), tagParent, valueChild, level);
             }
         }
     }

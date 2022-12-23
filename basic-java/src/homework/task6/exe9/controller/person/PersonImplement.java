@@ -1,17 +1,16 @@
 package homework.task6.exe9.controller.person;
 
 import homework.task6.exe9.model.Person;
-
 import java.io.*;
 import java.util.ArrayList;
 
-public class PersonImplement implements PersonInterface{
-    private File file;
+public class PersonImplement implements PersonInterface {
+    private final File file;
     private OutputStream outputStream;
     private PrintWriter printWriter;
     private FileReader fileReader;
     private BufferedReader bufferedReader;
-    private ArrayList<String> personArrayList;
+    private final ArrayList<String> personArrayList;
     public PersonImplement() {
         this.file = new File("src/homework/task6/exe9/resources/person.txt");
         this.personArrayList = new ArrayList<>();

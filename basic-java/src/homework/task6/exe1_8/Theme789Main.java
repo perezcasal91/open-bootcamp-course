@@ -29,61 +29,61 @@ public class Theme789Main {
     }
     public static String reverse(String text) {
         System.out.println("Default Exe");
-        StringBuilder reverse = new StringBuilder();
+        StringBuilder sbReverse = new StringBuilder();
         for (int i = text.length() - 1; i >= 0 ; i--) {
-         reverse.append(text.charAt(i));
+            sbReverse.append(text.charAt(i));
         }
-        return reverse.toString();
+        return sbReverse.toString();
     }
     public static void stringArray() {
         System.out.println("Exe 1");
-        String [] stringArray = {"Hi", "Hello", "Good Night", "Good Afternoon", "Good Evening", "Night"};
-        for (int i = 0; i < stringArray.length; i++) {
-            if (i != stringArray.length - 1) {
-                System.out.print(stringArray[i] + ",");
+        String [] aStringArray = {"Hi", "Hello", "Good Night", "Good Afternoon", "Good Evening", "Night"};
+        for (int i = 0; i < aStringArray.length; i++) {
+            if (i != aStringArray.length - 1) {
+                System.out.print(aStringArray[i] + ",");
             } else {
-                System.out.println(stringArray[i]);
+                System.out.println(aStringArray[i]);
             }
         }
     }
-    private static int[][] createArray(){
-        int [][] resultArray = new int[5][5];
-        Random random = new Random();
-        for (int i = 0; i < resultArray.length; i++) {
-            for (int j = 0; j < resultArray[i].length; j++) {
-                resultArray[i][j] = random.nextInt(1,10);
+    private static int[][] createArray() {
+        int [][] abResultArray = new int[5][5];
+        Random cRandom = new Random();
+        for (int i = 0; i < abResultArray.length; i++) {
+            for (int j = 0; j < abResultArray[i].length; j++) {
+                abResultArray[i][j] = cRandom.nextInt(1,10);
             }
         }
-        return resultArray;
+        return abResultArray;
     }
-    private static void printArray(int [][] numbers){
+    private static void printArray(int [][] numbers) {
         System.out.println("Exe 2");
         for (int i = 0; i < numbers.length; i++) {
             System.out.println("File:" + i);
             for (int j = 0; j < numbers[i].length; j++) {
                 if (j != numbers[i].length -1) {
                     System.out.print("Index:" + j + " Value:" + numbers[i][j] + " ");
-                } else{
+                } else {
                     System.out.print("Index:" + j + " Value:" + numbers[i][j]);
                 }
             }
             System.out.println();
         }
     }
-    private static void vectorHandler(){
+    private static void vectorHandler() {
         System.out.println("Exe 3");
-        Vector<String> stringVector = new Vector<>();
+        Vector<String> vStrings = new Vector<>();
         for (int i = 1; i < 6; i++) {
-            stringVector.add("Vector:" + i);
+            vStrings.add("Vector:" + i);
         }
-        stringVector.remove(1);
-        stringVector.remove(2);
-        for (String value : stringVector) {
+        vStrings.remove(1);
+        vStrings.remove(2);
+        for (String value : vStrings) {
             System.out.println(value);
         }
     }
 
-    private static void vectorInsertion(){
+    private static void vectorInsertion() {
         System.out.println("Exe 4");
         System.out.print
                 ("""
@@ -96,41 +96,41 @@ public class Theme789Main {
             we know the initial capacity, it is 1000, so we can initialize the Vector in that capacity, so for the first
             time we insert that problem would not happen.
                 """);
-        Vector<Integer> integerVector = new Vector<>(1000);
-        System.out.println("Vector Capacity: " + integerVector.capacity());
+        Vector<Integer> vIntegers = new Vector<>(1000);
+        System.out.println("Vector Capacity: " + vIntegers.capacity());
     }
-    private static void stringArrayListIntoLinkedList(){
+    private static void stringArrayListIntoLinkedList() {
         System.out.println("Exe 5");
-        ArrayList<String> stringArrayList = new ArrayList<>();
-        stringArrayList.add("Jon");
-        stringArrayList.add("Kyle");
-        stringArrayList.add("Lyn");
-        stringArrayList.add("Jess");
-        LinkedList<String> stringLinkedList = new LinkedList<>(stringArrayList);
-        for (int i = 0; i < stringLinkedList.size(); i++) {
-            System.out.println("ArrayList Value: " + stringArrayList.get(i));
-            System.out.println("LinkedList Value: " + stringLinkedList.get(i));
+        ArrayList<String> alStrings = new ArrayList<>();
+        alStrings.add("Jon");
+        alStrings.add("Kyle");
+        alStrings.add("Lyn");
+        alStrings.add("Jess");
+        LinkedList<String> llStrings = new LinkedList<>(alStrings);
+        for (int i = 0; i < llStrings.size(); i++) {
+            System.out.println("ArrayList Value: " + alStrings.get(i));
+            System.out.println("LinkedList Value: " + llStrings.get(i));
         }
     }
-    private static void insertIntoArrayList(){
+    private static void insertIntoArrayList() {
         System.out.println("Exe 6");
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
+        ArrayList<Integer> alIntegers = new ArrayList<>();
         for (int i = 1; i < 11; i++) {
             if (i %  2 == 0) {
-                integerArrayList.add(i);
+                alIntegers.add(i);
             }
         }
         System.out.print("Integer Array Values: ");
-        for (int i = 0; i < integerArrayList.size(); i++) {
-            if (i != integerArrayList.size() - 1) {
-                System.out.print(integerArrayList.get(i) + " ");
-            } else System.out.print(integerArrayList.get(i));
+        for (int i = 0; i < alIntegers.size(); i++) {
+            if (i != alIntegers.size() - 1) {
+                System.out.print(alIntegers.get(i) + " ");
+            } else System.out.print(alIntegers.get(i));
         }
     }
     private static void divideByZero(int a, int b) {
         System.out.println("Exe 7");
         try {
-            if (numberException(b)){
+            if (numberException(b)) {
                 System.out.println("Division is: " + a / b);
                 System.out.println("Code Demo");
             }
@@ -140,7 +140,7 @@ public class Theme789Main {
         }
     }
     private static boolean numberException(int b) throws ArithmeticException {
-        if (b == 0){
+        if (b == 0) {
             throw new ArithmeticException("This can not be done");
         }
         return true;
@@ -149,12 +149,12 @@ public class Theme789Main {
         System.out.println("Exe 8");
         try {
             if (inputFile.isFile()) {
-                InputStream fileInputStream = new FileInputStream(inputFile);
-                PrintStream printStream = new PrintStream(outputFile);
-                byte [] read = fileInputStream.readAllBytes();
-                printStream.write(read);
-                printStream.flush();
-                closeStream(fileInputStream, printStream);
+                InputStream isInput = new FileInputStream(inputFile);
+                PrintStream psPrint = new PrintStream(outputFile);
+                byte [] read = isInput.readAllBytes();
+                psPrint.write(read);
+                psPrint.flush();
+                closeStream(isInput, psPrint);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

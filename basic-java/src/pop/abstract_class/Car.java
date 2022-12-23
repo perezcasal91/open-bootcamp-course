@@ -1,17 +1,14 @@
 package pop.abstract_class;
 
 public abstract class Car {
-    // Attributes
     private String color;
     private String manufacturer;
     private String model;
     private Double weight;
     private Float size;
     private Integer speed;
-    // Empty Constructor
-    public Car(){}
-    // Constructor with parameter
-    public Car(String color, String manufacturer, String model, Double weight, Float size, Integer speed){
+    public Car() {}
+    public Car(String color, String manufacturer, String model, Double weight, Float size, Integer speed) {
         this.color = color;
         this.manufacturer = manufacturer;
         this.model = model;
@@ -19,7 +16,6 @@ public abstract class Car {
         this.size = size;
         this.speed = speed;
     }
-    // Getter and Setter
     public String getColor() {
         return color;
     }
@@ -56,7 +52,6 @@ public abstract class Car {
     public void setSpeed(Integer speed) {
         this.speed = speed;
     }
-    // To String Method
     @Override
     public String toString() {
         return "Car {" +
@@ -68,6 +63,5 @@ public abstract class Car {
                 ", speed=" + getSpeed() +
                  " } ";
     }
-    // Behavior
     public abstract void speedUp(Integer quantity);
 }

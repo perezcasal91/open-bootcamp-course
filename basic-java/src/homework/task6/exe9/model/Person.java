@@ -22,7 +22,7 @@ public class Person {
     public String getName() {
         return name;
     }
-    public void setName(String name) throws Exception{
+    public void setName(String name) throws Exception {
         Matcher matcher = pattern.matcher(name);
         if (matcher.matches()) {
             this.name = name;

@@ -3,7 +3,7 @@ package homework.task7.model;
 public class CarWeightOrSpeed {
     private Integer value;
     private String unit;
-    public CarWeightOrSpeed(){}
+    public CarWeightOrSpeed() {}
     public CarWeightOrSpeed(Integer value, String unit) {
         this.value = value;
         this.unit = unit;

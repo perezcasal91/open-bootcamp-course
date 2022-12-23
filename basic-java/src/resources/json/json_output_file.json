@@ -1,8 +1,1 @@
-{
-  "person":
-  {
-    "first-name":"Elio",
-    "age":31,
-    "last-name":"Perez"
-  }
-}
+{"person":{"first-name":"Elio","age":31,"last-name":"Perez"}}

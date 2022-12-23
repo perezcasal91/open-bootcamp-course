@@ -9,7 +9,8 @@ public class SmartDevice {
     private boolean sensors;
     private String dimensions;
     public SmartDevice() {}
-    public SmartDevice(String brand, String model, String color, String manufacturer, String operativeSystem, boolean sensors, String dimensions) {
+    public SmartDevice(String brand, String model, String color, String manufacturer,
+                       String operativeSystem, boolean sensors, String dimensions) {
         this.brand = brand;
         this.model = model;
         this.color = color;

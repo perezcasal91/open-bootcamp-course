@@ -1,117 +1,145 @@
 package concepts;
 
-
 import java.io.*;
 
+/**
+ * Example of a read and write a text file.
+ */
 public class ReadWriteFilesMain {
     public static void main(String[] args) {
-        File file = new File("src/resources/doc/FileStream.txt");
+        File fInputFile = new File("src/resources/doc/FileStream.txt");
         System.out.println();
-        // Read File
-        readFileByLine(file);
-        // Write File
-        writeFileFromTheBeginning(file);
-        writeFileFromTheEnd(file);
-        // Read File
-        readFileByByte(file);
-        // Copy File
-        copyFileByByte(file);
-        copyFileByAllByte(file);
+        readFileByLine(fInputFile);
+        writeFileFromTheBeginning(fInputFile);
+        writeFileFromTheEnd(fInputFile);
+        readFileByByte(fInputFile);
+        copyFileByByte(fInputFile);
+        copyFileByAllByte(fInputFile);
     }
+    /**
+     * Read a text file, it's read line by line,
+     * using a FileReader and BufferedReader.
+     * @param file text file to read.
+     */
     private static void readFileByLine(File file) {
         try {
             if (file.isFile()) {
-                FileReader fileReader = new FileReader(file);
-                BufferedReader bufferedReader= new BufferedReader(fileReader);
-                String line = bufferedReader.readLine();
-                while (line != null) {
-                    System.out.println(line);
-                    line = bufferedReader.readLine();
+                FileReader frFile = new FileReader(file);
+                BufferedReader brBuffered= new BufferedReader(frFile);
+                String sLine = brBuffered.readLine();
+                while (sLine != null) {
+                    System.out.println(sLine);
+                    sLine = brBuffered.readLine();
                 }
-                fileReader.close();
-                bufferedReader.close();
+                frFile.close();
+                brBuffered.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * Read a text file, it's read by byte,
+     * using a FileInputStream and BufferedInputStream.
+     * @param file text file to read.
+     */
     private static void readFileByByte(File file) {
         try {
             if (file.isFile()) {
-                FileInputStream fileInputStream = new FileInputStream(file);
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-                int line = bufferedInputStream.read();
-                while (line != -1) {
-                    System.out.print((char)line);
-                    line = bufferedInputStream.read();
+                FileInputStream fisFile = new FileInputStream(file);
+                BufferedInputStream bisBuffered = new BufferedInputStream(fisFile);
+                int iRead = bisBuffered.read();
+                while (iRead != -1) {
+                    System.out.print((char) iRead);
+                    iRead = bisBuffered.read();
                 }
-                fileInputStream.close();
-                bufferedInputStream.close();
+                fisFile.close();
+                bisBuffered.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * Write a text file, using a FileWriter.
+     * @param file text file to write.
+     */
     private static void writeFileFromTheEnd(File file) {
         try {
             if (file.isFile()) {
-                FileWriter fileWriter = new FileWriter(file);
-                String newText = "Line File Input Stream Example\n";
-                for (int i = 10; i < 15; i++) {
-                    fileWriter.write(i + newText);
+                FileWriter fwFile = new FileWriter(file);
+                String sNewText = " Line File Writer Example\n";
+                for (int i = 1; i < 6; i++) {
+                    fwFile.write(i + sNewText);
                 }
-                fileWriter.flush();
-                fileWriter.close();
+                fwFile.flush();
+                fwFile.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * Write a text file, using a PrintWriter.
+     * @param file text file to write.
+     */
     private static void writeFileFromTheBeginning(File file) {
         try {
             if (file.isFile()) {
-                PrintWriter printWriter = new PrintWriter(file);
-                String newText = "Line File Input Stream Example\n";
-                for (int i = 10; i < 15; i++) {
-                    printWriter.write(i + newText);
+                PrintWriter pwPrint = new PrintWriter(file);
+                String sNewText = " Line Print Writer Example\n";
+                for (int i = 1; i < 6; i++) {
+                    pwPrint.write(i + sNewText);
                 }
-                printWriter.flush();
-                printWriter.close();
+                pwPrint.flush();
+                pwPrint.close();
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * Copy the entry text file to another a text file,
+     * using a FileReader and PrintWriter.
+     * @param file text file to write.
+     */
     private static void copyFileByByte(File file) {
         try {
             if (file.isFile()) {
-                String fileUri = file.getParentFile().getPath().replace("\\", "/") + "/FileCopy.txt";
-                FileReader fileReader = new FileReader(file);
-                PrintWriter printWriter = new PrintWriter(fileUri);
-                int read = fileReader.read();
-                while (read != -1) {
-                    printWriter.write(read);
-                    read = fileReader.read();
+                String sDestinyFilePath = file.getParentFile().getPath()
+                        .replace("\\", "/") + "/FileCopy.txt";
+                FileReader frFile = new FileReader(file);
+                PrintWriter pwPrinter = new PrintWriter(sDestinyFilePath);
+                int iRead = frFile.read();
+                while (iRead != -1) {
+                    pwPrinter.write(iRead);
+                    iRead = frFile.read();
                 }
-                printWriter.flush();
-                printWriter.close();
-                fileReader.close();
+                pwPrinter.flush();
+                pwPrinter.close();
+                frFile.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+    /**
+     * Copy the entry text file to another a text file,
+     * using a FileInputStream and PrintStream.
+     * @param file text file to write.
+     */
     private static void copyFileByAllByte(File file) {
         try {
             if (file.isFile()) {
-                String fileUri = file.getParentFile().getPath().replace("\\", "/") + "/FileCopy.txt";
-                FileInputStream fileInputStream = new FileInputStream(file);
-                PrintStream printStream = new PrintStream(fileUri);
-                byte [] read = fileInputStream.readAllBytes();
-                printStream.write(read);
-                printStream.flush();
-                printStream.close();
-                fileInputStream.close();
+                String sDestinyFilePath = file.getParentFile().getPath()
+                        .replace("\\", "/") + "/FileCopy.txt";
+                FileInputStream fisFile = new FileInputStream(file);
+                PrintStream psPrint = new PrintStream(sDestinyFilePath);
+                byte [] read = fisFile.readAllBytes();
+                psPrint.write(read);
+                psPrint.flush();
+                psPrint.close();
+                fisFile.close();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

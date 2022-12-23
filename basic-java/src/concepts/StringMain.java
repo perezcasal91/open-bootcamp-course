@@ -1,17 +1,20 @@
 package concepts;
 
+/**
+ * Init with String.
+ * Using some methods.
+ */
 public class StringMain {
     public static void main(String[] args) {
-        String aString = "Hello World";
-        if (aString.equals("Hello")){
+        String sString = "Hello World";
+        if (sString.contains("Hello")) {
             System.out.println("True");
-        }else {
+        } else {
             System.out.println("False");
         }
-        System.out.println(aString.length());
-        System.out.println(aString.trim());
-        System.out.println(aString.toUpperCase());
-        System.out.println(aString.toLowerCase());
+        System.out.println(sString.length());
+        System.out.println(sString.trim());
+        System.out.println(sString.toUpperCase());
+        System.out.println(sString.toLowerCase());
     }
-
 }
