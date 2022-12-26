@@ -5,14 +5,13 @@ import com.springboot.springreststarting.services.CarServicesInterface;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 import org.springframework.stereotype.Component;
-
 import java.net.URI;
 import java.util.List;
 
 @Path("/")
 @Component
 public class CarController {
-    private CarServicesInterface carServicesInterface;
+    private final CarServicesInterface carServicesInterface;
     public CarController(CarServicesInterface carServicesInterface){
         this.carServicesInterface = carServicesInterface;
         this.carServicesInterface.fillCars();
