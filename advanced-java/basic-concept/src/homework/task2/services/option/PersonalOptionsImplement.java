@@ -1,4 +1,4 @@
-package homework.task2.controllers.option;
+package homework.task2.services.option;
 
 
 import homework.task2.services.parser.OptionParserImplement;
@@ -9,7 +9,7 @@ import homework.task2.services.user.UsersService;
 
 import java.io.PrintWriter;
 
-public class PersonalOptionsImplement implements OptionsController {
+public class PersonalOptionsImplement implements OptionsService {
     private final OptionParserService optionParserService;
     public PersonalOptionsImplement() {
         this.optionParserService = new OptionParserImplement();

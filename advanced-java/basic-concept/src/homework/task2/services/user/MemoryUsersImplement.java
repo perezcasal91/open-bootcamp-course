@@ -18,7 +18,7 @@ public class MemoryUsersImplement implements UsersService {
                 toList();
     }
     @Override
-    public void addUser(User ...users) {
+    public void addUsers(User ...users) {
         for (User user : users ) {
             if (!memoryData.contains(user)) {
                 memoryData.save(user);
@@ -28,7 +28,7 @@ public class MemoryUsersImplement implements UsersService {
         }
     }
     @Override
-    public void deleteUser(User ...users) {
+    public void deleteUsers(User ...users) {
         for (User user : users ) {
             memoryData.delete(user);
         }

@@ -50,7 +50,7 @@ public class FileUsersImplement implements UsersService {
                     .split("=");
         }
         @Override
-        public void addUser(User ...users) {
+        public void addUsers(User ...users) {
             getUsersFromFile();
             for (User user: users) {
                 if (usersList.stream().noneMatch(u -> u.getUsername().equals(user.getUsername()))) {
@@ -62,7 +62,7 @@ public class FileUsersImplement implements UsersService {
             initUsersList();
         }
         @Override
-        public void deleteUser(User ...users) {
+        public void deleteUsers(User ...users) {
             getUsersFromFile();
             for (User user: users) {
                 var userToDelete = getUser(user);

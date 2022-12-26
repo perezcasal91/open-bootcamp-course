@@ -1,4 +1,4 @@
-package homework.task2.controllers.option;
+package homework.task2.services.option;
 
 
 import homework.task2.services.user.FileUsersImplement;
@@ -8,7 +8,7 @@ import org.apache.commons.cli.*;
 
 import java.io.PrintWriter;
 
-public class ApacheCLIOptionsImplement implements OptionsController {
+public class ApacheCLIOptionsImplement implements OptionsService {
     private Options options;
     private Option userController;
 

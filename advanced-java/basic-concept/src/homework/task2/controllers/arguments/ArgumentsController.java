@@ -1,21 +1,30 @@
 package homework.task2.controllers.arguments;
 
 
-import homework.task2.controllers.option.ApacheCLIOptionsImplement;
-import homework.task2.controllers.option.OptionsController;
-import homework.task2.controllers.option.PersonalOptionsImplement;
+import homework.task2.services.option.ApacheCLIOptionsImplement;
+import homework.task2.services.option.OptionsService;
+import homework.task2.services.option.PersonalOptionsImplement;
+import homework.task2.services.user.UsersService;
 
 public class ArgumentsController {
     private final int controller;
-
+    private OptionsService optionsService;
     public ArgumentsController(int controller) {
         this.controller = controller;
+        getOptionController();
     }
 
-    public OptionsController getOptionService() {
+    private void getOptionController() {
         if (controller == 0) {
-            return new PersonalOptionsImplement();
+            optionsService = new PersonalOptionsImplement();
+        }else {
+            optionsService = new ApacheCLIOptionsImplement();
         }
-        return new ApacheCLIOptionsImplement();
+    }
+    public UsersService getUserService(String [] args) {
+        return optionsService.getUserService(args);
+    }
+    public void printHelp() {
+        optionsService.printHelp();
     }
 }

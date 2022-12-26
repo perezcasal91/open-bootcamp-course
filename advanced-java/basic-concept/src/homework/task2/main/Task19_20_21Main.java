@@ -2,17 +2,16 @@ package homework.task2.main;
 
 
 import homework.task2.controllers.arguments.ArgumentsController;
+import homework.task2.controllers.user.UsersController;
 import homework.task2.models.Rol;
 import homework.task2.models.User;
 import homework.task2.models.UserBuilder;
-import homework.task2.controllers.option.OptionsController;
-import homework.task2.services.user.UsersService;
+import homework.task2.services.option.OptionsService;
 
 public class Task19_20_21Main {
     public static void main(String[] args) {
         ArgumentsController argumentsController = new ArgumentsController(1);
-        OptionsController optionsController = argumentsController.getOptionService();
-        UsersService usersService = optionsController.getUserService(args);
+        UsersController usersController = new UsersController(argumentsController.getUserService(args));
 
         User userE = new UserBuilder()
                 .setUsername("perezcasal91")
@@ -46,12 +45,12 @@ public class Task19_20_21Main {
                 .setRol(Rol.USER)
                 .build();
 
-        usersService.addUser(userE, userD, userC);
-        usersService.addUser(userE, userD, userC, userA);
-        usersService.deleteUser(userA);
-        usersService.addUser(userE, userD, userC);
-        usersService.getAllUsers().forEach(System.out::println);
-        optionsController.printHelp();
+        usersController.addUser(userE, userD, userC);
+        usersController.addUser(userE, userD, userC, userA);
+        usersController.deleteUser(userA);
+        usersController.addUser(userE, userD, userC);
+        usersController.getAllUsers().forEach(System.out::println);
+        argumentsController.printHelp();
     }
 }
 
