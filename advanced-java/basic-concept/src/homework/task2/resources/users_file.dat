@@ -1,0 +1,3 @@
+User {  username=perezcasal91, name=Elio, lastname=Perez Casal, email=perezcasal91@gmail.com, rol=ADMIN } 
+User {  username=daylenleon87, name=Daylen, lastname=Gonzalez Leon, email=daylenleon87@gmail.com, rol=USER } 
+User {  username=calos91, name=Carlos, lastname=Perez Leon, email=carlos91@gmail.com, rol=USER } 

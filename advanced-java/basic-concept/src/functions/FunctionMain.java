@@ -10,11 +10,15 @@ public class FunctionMain {
     }
     private static void functionsHandler() {
         Functions cFunctions = new Functions();
+
         boolean bWeekday = cFunctions.isWeekday(4);
         System.out.println("Weekday: " + bWeekday);
+
         cFunctions.fruitDeterminate("peach");
+
         int[] aNumbers = {1, 2, 3, 4, 5};
         cFunctions.numberSum(aNumbers);
+
         cFunctions.infiniteSum(1, 2, 3, 4, 5);
     }
     private static void usersHandler() {

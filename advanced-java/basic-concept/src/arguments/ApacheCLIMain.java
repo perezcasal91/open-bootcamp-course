@@ -19,6 +19,7 @@ class ApacheCLIMain {
 
         try {
             CommandLine commandLine = commandLineParser.parse(options, args);
+
            if (commandLine.hasOption(minOption.getOpt())) {
                System.out.println("Min Value: " + commandLine.getOptionValue(minOption.getOpt()));
            }
@@ -28,6 +29,7 @@ class ApacheCLIMain {
            if (commandLine.hasOption(nameOption.getOpt())) {
                 System.out.println("Min Value: " + commandLine.getOptionValue(nameOption.getOpt()));
             }
+
             System.out.println();
             printHelp(options);
         } catch (ParseException e) {

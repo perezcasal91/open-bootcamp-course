@@ -28,7 +28,9 @@ class OptionsParser {
     }
     public void parse(String [] args) {
         for (int i = 0; i < args.length; i++) {
+
             String key = args[i].replace("-", "").toLowerCase();
+
             if (options.containsKey(key)) {
                 setOption(key, args[i + 1]);
                 i++;

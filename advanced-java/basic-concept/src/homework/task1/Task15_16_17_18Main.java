@@ -1,4 +1,4 @@
-package homewok.Task1;
+package homework.task1;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,7 +37,7 @@ public class Task15_16_17_18Main {
     }
     private static void fileNotFound() {
         File file = new File("");
-        try (InputStream inputStream = new FileInputStream(file)){
+        try (InputStream inputStream = new FileInputStream(file)) {
             System.out.println(inputStream.read());
         } catch (Exception exception) {
             exceptionMessage(exception, 3);
