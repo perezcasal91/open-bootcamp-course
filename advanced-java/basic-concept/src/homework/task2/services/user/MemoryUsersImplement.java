@@ -1,6 +1,6 @@
 package homework.task2.services.user;
 
-import homework.task2.dataaccess.MemoryData;
+import homework.task2.domain.MemoryData;
 import homework.task2.models.User;
 
 import java.util.List;

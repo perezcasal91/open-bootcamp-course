@@ -1,18 +1,18 @@
 package homework.task2.main;
 
 
-import homework.task2.controllers.ArgumentsController;
+import homework.task2.controllers.arguments.ArgumentsController;
 import homework.task2.models.Rol;
 import homework.task2.models.User;
 import homework.task2.models.UserBuilder;
-import homework.task2.services.option.OptionsService;
+import homework.task2.controllers.option.OptionsController;
 import homework.task2.services.user.UsersService;
 
 public class Task19_20_21Main {
     public static void main(String[] args) {
         ArgumentsController argumentsController = new ArgumentsController(1);
-        OptionsService optionsService = argumentsController.getOptionService();
-        UsersService usersService = optionsService.getUserService(args);
+        OptionsController optionsController = argumentsController.getOptionService();
+        UsersService usersService = optionsController.getUserService(args);
 
         User userE = new UserBuilder()
                 .setUsername("perezcasal91")
@@ -51,7 +51,7 @@ public class Task19_20_21Main {
         usersService.deleteUser(userA);
         usersService.addUser(userE, userD, userC);
         usersService.getAllUsers().forEach(System.out::println);
-        optionsService.printHelp();
+        optionsController.printHelp();
     }
 }
 

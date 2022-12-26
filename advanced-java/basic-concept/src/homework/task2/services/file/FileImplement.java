@@ -1,6 +1,6 @@
 package homework.task2.services.file;
 
-import homework.task2.dataaccess.FileData;
+import homework.task2.domain.FileData;
 
 import java.util.ArrayList;
 import java.util.List;

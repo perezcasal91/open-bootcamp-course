@@ -1,4 +1,4 @@
-package homework.task2.dataaccess;
+package homework.task2.domain;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
