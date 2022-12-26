@@ -1,4 +1,4 @@
-package homework.Task678.singleton.exe1;
+package homework.Task678.exe2;
 
 import java.util.ArrayList;
 import java.util.List;

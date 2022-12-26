@@ -1,4 +1,4 @@
-package homework.Task678.singleton.exe1;
+package homework.Task678.exe2;
 
 public class ApplicationMain {
     public static void main(String []args){
