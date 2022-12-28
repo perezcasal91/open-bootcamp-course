@@ -7,15 +7,15 @@ import homework.task2.services.option.PersonalOptionsImplement;
 import homework.task2.services.user.UsersService;
 
 public class ArgumentsController {
-    private final int controller;
+    private final int service;
     private OptionsService optionsService;
-    public ArgumentsController(int controller) {
-        this.controller = controller;
-        getOptionController();
+    public ArgumentsController(int service) {
+        this.service = service;
+        getOptionService();
     }
 
-    private void getOptionController() {
-        if (controller == 0) {
+    private void getOptionService() {
+        if (service == 0) {
             optionsService = new PersonalOptionsImplement();
         }else {
             optionsService = new ApacheCLIOptionsImplement();
