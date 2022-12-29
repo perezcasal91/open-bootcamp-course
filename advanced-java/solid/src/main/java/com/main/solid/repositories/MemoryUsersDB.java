@@ -4,7 +4,7 @@ import com.main.solid.entities.User;
 
 import java.util.ArrayList;
 
-public class MemoryUsersDB extends UsersDB {
+public class MemoryUsersDB implements UsersDB {
     private final ArrayList<User> usersList;
     public MemoryUsersDB() {
         this.usersList = new ArrayList<>();

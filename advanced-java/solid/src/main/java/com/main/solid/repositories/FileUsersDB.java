@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileUsersDB extends UsersDB {
+public class FileUsersDB implements UsersDB {
     private final String filePath;
     public FileUsersDB() {
         this.filePath = "src/resources/doc/users_db.dat";

@@ -6,7 +6,12 @@ public class User {
     private String lastname;
     private String email;
     private int accessLevel;
-    public User() {}
+    public User() {
+        this.name = "";
+        this.lastname = "";
+        this.email = "";
+        this.accessLevel = 0;
+    }
     public String getUsername() {
         return username;
     }
