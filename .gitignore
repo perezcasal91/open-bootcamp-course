@@ -2,6 +2,7 @@
 target/
 out/
 .idea/
+.mvn/
 ## Generic Files ##
 *.iws
 *.iml
