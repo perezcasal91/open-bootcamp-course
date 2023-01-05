@@ -20,7 +20,7 @@ public class LaptopController {
             consumes = "application/json")
     public ResponseEntity<LaptopEntity> save(@RequestBody LaptopEntity newLaptop) {
         LaptopEntity laptop = laptopService.save(newLaptop);
-        return laptop == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(laptop);
+        return laptop == null ? ResponseEntity.badRequest().build() : ResponseEntity.ok(laptop);
     }
 
     @PutMapping(
@@ -31,8 +31,9 @@ public class LaptopController {
     }
 
     @DeleteMapping(value = "/api/laptops/{id}")
-    public void delete(@PathVariable Long id) {
+    public ResponseEntity<LaptopEntity> delete(@PathVariable Long id) {
         laptopService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping(

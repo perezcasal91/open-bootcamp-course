@@ -72,8 +72,7 @@ public class LaptopEntity {
             return true;
         if (!(o instanceof LaptopEntity book))
             return false;
-        return Objects.equals(this.id, book.id)
-                && Objects.equals(this.brand, book.brand)
+        return Objects.equals(this.brand, book.brand)
                 && Objects.equals(this.storage, book.storage)
                 && Objects.equals(this.price, book.price)
                 && Objects.equals(this.releaseDate, book.releaseDate)

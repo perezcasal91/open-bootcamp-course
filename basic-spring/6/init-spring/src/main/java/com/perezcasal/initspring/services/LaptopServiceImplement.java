@@ -2,6 +2,8 @@ package com.perezcasal.initspring.services;
 
 import com.perezcasal.initspring.entities.LaptopEntity;
 import com.perezcasal.initspring.repositories.LaptopRepository;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
 @Service
 public class LaptopServiceImplement implements LaptopService {
     LaptopRepository laptopRepository;
+    Logger logger = LoggerFactory.getLogger(LaptopServiceImplement.class);
 
     public LaptopServiceImplement(LaptopRepository laptopRepository) {
         this.laptopRepository = laptopRepository;
@@ -16,7 +19,16 @@ public class LaptopServiceImplement implements LaptopService {
 
     @Override
     public LaptopEntity save(LaptopEntity newLaptop) {
+        logger.info("Call to the function save.");
+        if (isAnyMatch(newLaptop)) {
+            logger.warn("The Laptop you are trying to add already exist.");
+            return null;
+        }
        return laptopRepository.save(newLaptop);
+    }
+
+    private boolean isAnyMatch(LaptopEntity newLaptop) {
+        return laptopRepository.findAll().stream().anyMatch(laptop -> laptop.equals(newLaptop));
     }
 
     @Override
@@ -31,6 +43,7 @@ public class LaptopServiceImplement implements LaptopService {
                     return laptopRepository.save(newLaptop);
                 });
     }
+
 
     private void updateFromNewBook(LaptopEntity laptop, LaptopEntity newLaptop) {
         laptop.setBrand(newLaptop.getBrand());
