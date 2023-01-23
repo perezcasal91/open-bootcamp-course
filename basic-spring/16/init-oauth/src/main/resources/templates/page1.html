@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 1</title>
+</head>
+<body>
+  <h1>Hello World from secure page</h1>
+  <h2>Client Data</h2>
+  <span>Message:</span><span th:text="${message}"></span><br>
+  <span>Client Name:</span><span th:text="${clientName}"></span><br>
+  <span>Client Id:</span><span th:text="${clientId}"></span><br>
+  <span>Client Secret:</span><span th:text="${clientSecret}"></span><br>
+  <span>Client Registration Id:</span><span th:text="${clientRegistrationId}"></span><br>
+  <span>Client Authorization Type:</span><span th:text="${clientAuthorizationType}"></span><br>
+  <span>Client Redirect Uri:</span><span th:text="${clientRedirectUri}"></span><br>
+  <h2>User Data</h2>
+  <span>User Name:</span><span th:text="${userName}"></span><br>
+  <span th:each="userAttrib : ${userAttributes}">
+    <span th:text="${userAttrib}"></span><br>
+  </span>
+</body>
+</html>
