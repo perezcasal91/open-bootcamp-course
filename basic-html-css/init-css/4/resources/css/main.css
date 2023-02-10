@@ -1,0 +1,22 @@
+h1 {
+    color: red;
+}
+
+#p1 {
+    color: blue;
+    font-size: 16pt;
+}
+
+.p2 {
+    color: green;
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+
+*.warnig {
+    color: darkred;
+}
+
+.c1, .c2, .c3 {
+    text-decoration: underline;
+}

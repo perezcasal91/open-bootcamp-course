@@ -1,0 +1,53 @@
+.simple-color {
+    color: orangered;
+}
+
+.hexadecimal-color {
+    color: #214f4b;
+}
+
+.rgb-color {
+    color: rgb(100, 0, 200);
+}
+
+.rgba-color {
+    color: rgba(10, 45, 15, 0.5);
+}
+
+/* Background */
+.image-color-external {
+    background-image: url(https://th.bing.com/th/id/OIP.OYWOws1_A5LwgaIXuuFWyAHaEo?pid=ImgDet&rs=1);
+    background-position: left top;
+    background-size: cover;
+    height: 100px;
+    
+}
+
+.image-color-internal {
+    background-image: url(../img/img1.jpg);
+    background-position: left top;
+    background-size: cover;
+    height: 100px;
+}
+
+.gradient-color {
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+.width {
+    background-color: blueviolet;
+    width: 100px;
+}
+
+.height {
+    background-color: crimson;
+    height: 100px;
+}
+
+.card {
+    border-style: solid;
+    border-color: rgb(150, 150, 150);
+    border-width: 1px;
+    padding: 10px 20px;
+    margin: 10px 20px;
+}
