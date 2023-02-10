@@ -1,4 +1,4 @@
-package com.perezcasal.userauth.controller;
+package com.perezcasal.userauth.controller.rest;
 
 import com.perezcasal.userauth.config.RestAuthenticationFailureHandler;
 import com.perezcasal.userauth.config.TokenProvider;
@@ -21,13 +21,13 @@ import javax.naming.AuthenticationException;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserRestController {
 
     private final AuthenticationManager authenticationManager;
     private final TokenProvider tokenProvider;
     private final UserService userService;
 
-    public UserController(AuthenticationManager authenticationManager, TokenProvider tokenProvider, UserService userService) {
+    public UserRestController(AuthenticationManager authenticationManager, TokenProvider tokenProvider, UserService userService) {
         this.authenticationManager = authenticationManager;
         this.tokenProvider = tokenProvider;
         this.userService = userService;

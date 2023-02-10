@@ -1,4 +1,4 @@
-package com.perezcasal.userauth.service;
+package com.perezcasal.userauth.service.impl;
 
 import com.perezcasal.userauth.exception.EmailAlreadyExistsException;
 import com.perezcasal.userauth.exception.UsernameAlreadyExistsException;
@@ -6,6 +6,8 @@ import com.perezcasal.userauth.model.dto.UserDTO;
 import com.perezcasal.userauth.model.entity.RoleEntity;
 import com.perezcasal.userauth.model.entity.UserEntity;
 import com.perezcasal.userauth.repository.UserRepository;
+import com.perezcasal.userauth.service.RoleService;
+import com.perezcasal.userauth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
