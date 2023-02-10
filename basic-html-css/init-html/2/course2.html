@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ejercicio 02 - Formularios en HTML</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Get Form</h1>
+    <div>
+        <form action="/" method="get">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <br>
+            <div>
+                <label for="age">Age: </label>
+                <input type="number" name="age" id="age" required min="0" max="120">
+            </div>
+            <br>
+            <div>
+                <label for="favorite">Favorite Phrase: </label>
+                <textarea type="textarea" name="favorite" id="favorite" required></textarea>
+            </div>
+            <br>
+            <div>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
