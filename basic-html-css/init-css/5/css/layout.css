@@ -1,0 +1,13 @@
+.div-1, .div-2 {
+    background-color: red;
+}
+
+.spam-1 {
+    background-color: aqua;
+    float: right;
+}
+
+.spam-2 {
+    background-color: blueviolet;
+    float: left;
+}

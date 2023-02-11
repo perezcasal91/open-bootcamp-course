@@ -1,0 +1,50 @@
+#of-header {
+    text-align: center;
+}
+
+.container {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container>div {
+    margin: 10px 0px;
+    padding: 10px;
+    height: 200px;
+    width: 400px;
+    border: 1px solid black;
+}
+
+.overflow-hidden {
+    background-color: aliceblue;
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    background-color: antiquewhite;
+    overflow: scroll;
+}
+
+.overflow-visible {
+    background-color: aqua;
+    overflow: visible;
+}
+
+.overflow-auto {
+    background-color: aquamarine;
+    overflow: auto;
+}
+
+.overflow-x {
+    background-color: azure;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.overflow-y {
+    background-color: aliceblue;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
