@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Pseudo Classes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/pseudo-classes.css"
+        />
+    </head>
+    <body>
+        <div class="frame-container">
+            <h4>
+                We use the pseudo-classes to refference the elements inside the
+                html
+            </h4>
+            <div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
+                accusamus error doloremque minus laboriosam quis inventore
+                omnis, quae alias, iure libero velit porro non animi odio quam
+                ab ipsum. Autem!
+            </div>
+            <br />
+            <div class="list">
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+                <p>Paragraph 3</p>
+            </div>
+            <br />
+            <div class="siblings">
+                <p>Siblings 1</p>
+                <p>Siblings 2</p>
+                <p>Siblings 3</p>
+            </div>
+            <br />
+            <div class="link">
+                <a
+                    href="http://www.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Go Google</a
+                >
+                <a
+                    href="http://www.marca.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Go Marca</a
+                >
+            </div>
+            <br>
+            <input type="text" name="test" id="test" class="input" />
+            <br>
+            <h3>Pseudo Classes</h3>
+            <h4>Hover</h4>
+            <code>.text:hover { background-color: bisque; }</code>
+            <h4>First Child</h4>
+            <code>.list p:first-child { color: white; }</code>
+            <h4>Nth-child</h4>
+            <code
+                >.siblings p:nth-child(2n + 1) { color: cornflowerblue; }</code
+            >
+            <h4>Link : Mean the a is not visited yet</h4>
+            <code>.link a:link { color: blue; }</code>
+            <h4>/* Visited: Link visited */</h4>
+            <code>.link a:visited { color: green; }</code>
+            <h4>Active: Link active is the link is clicked</h4>
+            <code>.link a:active { color: crimson; }</code>
+            <h4>Focus</h4>
+            <code>.input:focus { background: yellow; color: blue; }</code>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Nested Selectors</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/nested-selectors.css"
+        />
+    </head>
+    <body>
+        <div class="frame-container">
+            <section class="main">
+                <div id="test" class="content">
+                    <p>This is a paragraph.</p>
+                    <p>This is a paragraph.</p>
+                    <p>This is a paragraph.</p>
+                    <p>This is a paragraph.</p>
+                    <button id="button-id">Button</button>
+                </div>
+                <p>This is another paragraph</p>
+            </section>
+            <h3>Selection nested</h3>
+            <h4>By tag affects all</h4>
+            <code>p { color: green; } </code>
+            <h4>By class affects all the elements inside that class</h4>
+            <code>.main p { color: blue; }</code>
+            <h4>With the > after the class is reffering to the elements with no other style</h4>
+            <code>.main > p {
+                color: bisque;
+            }</code>
+            <h4>By id affects only the element</h4>
+            <code>#button-id {
+                color: red;
+            }</code>
+            <h4>By id and the tag affects all the elements he contain</h4>
+            <code>#test p {
+                color: blueviolet;
+            }</code>
+        </div>
+    </body>
+</html>

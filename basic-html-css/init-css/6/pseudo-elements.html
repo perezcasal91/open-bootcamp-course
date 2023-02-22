@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Pseudo Elements</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/pseudo-elements.css"
+        />
+    </head>
+    <body>
+        <div class="frame-container">
+            <div class="main">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <span
+                        >Totam assumenda fugiat qui obcaecati, placeat
+                        architecto nemo! Corrupti omnis, laudantium consequatur
+                        ad dicta autem debitis hic, blanditiis, eum architecto
+                        doloribus! Tenetur.</span
+                    >
+                </p>
+                <label for="phone">Phone:</label>
+                <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="This is a Phone"
+                />
+                <ul>
+                    <li>Element 1</li>
+                    <li>Element 2</li>
+                    <li>Element 3</li>
+                </ul>
+            </div>
+            <h3>Pseudo Elements</h3>
+            <h4>Before: is use for the start of the element</h4>
+            <code>.main p span::before { content: "<< " }</code>
+            <h4>After: is use for the end of the element</h4>
+            <code>.main p span::after { content: " >>" }</code>
+            <h4>First letter</h4>
+            <code>.main p::first-letter { font-size: xx-large; }</code>
+            <h4>First line</h4>
+            <code
+                >.main p::first-line { color: blueviolet; font-size: large;
+                }</code
+            >
+            <h4>Selection</h4>
+            <code
+                >.main p::selection { background-color: aliceblue; color: black;
+                }</code
+            >
+            <h4>Placeholder</h4>
+            <code>.main input::placeholder { color: red; }</code>
+            <h4>Marker: For the unordered and ordered list</h4>
+            <code>.main li::marker { color: cyan; font-size: 2rem; }</code>
+        </div>
+    </body>
+</html>

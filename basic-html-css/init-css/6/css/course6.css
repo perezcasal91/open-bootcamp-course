@@ -1,0 +1,16 @@
+/* We use the pseudo-element ::before to change the content of the buuton to "Pass over" */
+.button::before {
+    content: "Pass over";
+}
+
+/* We use the pseudo-class hover to change the color and the backgorund */
+.button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* When the button is focus we change the content using the pseudo-element ::before */
+.button:focus::before {
+    content: "!Done";
+}
+

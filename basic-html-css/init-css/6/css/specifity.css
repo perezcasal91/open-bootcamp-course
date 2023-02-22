@@ -1,0 +1,28 @@
+/* Specifity */
+
+/* None style specifity is (0,0,0) */
+
+/* With tag specificty is (0,0,1) */
+
+h1 {
+    color: blue;
+}
+
+p {
+    color: red;
+}
+
+/* With class specificty is (0,1,0) */
+.text {
+    color: gray;
+}
+
+/* With id specificty is (1,0,0) */
+#text-id {
+    color: green;
+}
+
+/* With class, id and tag specificty is (1,1,1) */
+.text#text-id p {
+    color: blueviolet;
+}

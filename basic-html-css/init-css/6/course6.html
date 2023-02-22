@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Selectores, pseudo-clases y pseudo-elementos en CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/course6.css"
+        />
+    </head>
+    <body>
+        <div class="frame-container">
+            <div>
+                <h1>Exercise</h1>
+                <button class="button"></button>
+            </div>
+            <h2>Explanation</h2>
+            <h3>
+                We use the pseudo-element ::before to change the content of the
+                buuton to "Pass over"
+            </h3>
+            <code>.button::before { content: "Pass over"; }</code>
+            <h3>
+                We use the pseudo-class hover to change the color and the
+                backgorund
+            </h3>
+            <code
+                >.button:hover { background-color: green; color: white; }</code
+            >
+            <h3>
+                When the button is focus we change the content using the
+                pseudo-element ::before
+            </h3>
+            <code> .button:focus::before { content: "!Done"; }</code>
+        </div>
+    </body>
+</html>

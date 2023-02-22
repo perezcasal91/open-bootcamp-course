@@ -1,0 +1,27 @@
+/* Selection nested */
+
+/* By tag affects all*/
+p {
+    color: green;
+}
+
+/* By class affects all the elements inside that class */
+.main p {
+    color: blue;
+}
+
+/* With the > after the class is reffering to the elements with no other style */
+.main > p {
+    color: cyan;
+}
+
+/* By id affects only the element */
+#button-id {
+    color: red;
+}
+
+/* By id and the tag affects all the elements he contain */
+#test p {
+    color: blueviolet;
+}
+

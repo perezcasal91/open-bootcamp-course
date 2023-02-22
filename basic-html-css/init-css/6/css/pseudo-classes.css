@@ -1,0 +1,59 @@
+/* Pseudo Classes */
+
+.text {
+    padding: 1rem;
+    width: 10rem;
+    height: 12rem;
+    background-color: aquamarine;
+}
+
+/* Hover */
+.text:hover {
+    background-color: bisque;
+}
+
+.list {
+    padding: 1rem;
+    background-color: blueviolet;
+}
+
+/* First Child */
+.list p:first-child {
+    color: white;
+}
+
+.siblings {
+    padding: 1rem;
+    background-color: burlywood;
+}
+
+/* nth-child */
+.siblings p:nth-child(2n + 1) {
+    color: cornflowerblue;
+}
+
+/* Link no visited yet */
+.link a:link {
+    color: blue;
+}
+
+/* Link visited */
+.link a:visited {
+    color: green;
+}
+
+/* Hover */
+.link a:hover {
+    color: orange;
+}
+
+/* Link active is the link is clicked */
+.link a:active {
+    color: crimson;
+}
+
+/* Focus */
+.input:focus {
+    background: yellow;
+    color: blue;
+}

@@ -1,0 +1,46 @@
+.main {
+    padding: 1rem;
+    height: 17rem;
+    width: 30rem;
+    background-color: aquamarine;
+}
+
+/* Pseudo Elements */
+
+/* Before: is use for the start of the element */
+.main p span::before {
+    content: "<< "
+}
+
+/* After: is use for the end of the element */
+.main p span::after {
+    content: " >>"
+}
+
+/* First letter */
+.main p::first-letter {
+    font-size: xx-large;
+}
+
+/* First line */
+.main p::first-line {
+    color: blueviolet;
+    font-size: large;
+}
+
+/* Selection */
+.main p::selection {
+    background-color: aliceblue;
+    color: black;
+}
+
+/* Placeholder */
+.main input::placeholder {
+    color: red;
+}
+
+/* Marker: For the unordered and ordered list  */
+.main li::marker {
+    color: cyan;
+    font-size: 2rem;
+}
