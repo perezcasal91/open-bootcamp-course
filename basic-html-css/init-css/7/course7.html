@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Login Exercice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./resources/css/course7.css"
+        />
+    </head>
+    <body>
+        <div class="frame-container">
+            <div class="main">
+                <div class="white-mode" onclick="changeMode()">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header">
+                    <span>Sign up to Dribbble</span>
+                    <div class="external-sign-up">
+                        <span>
+                            <picture>
+                                <img
+                                    src="https://th.bing.com/th/id/R.d1d14f62c14209bb46c2eee0f7ab02e2?rik=p%2fzYsNa11f%2bKvQ&pid=ImgRaw&r=0"
+                                    alt="logo-google"
+                                />
+                            </picture>
+                            <a href="">Sign up with Google</a>
+                        </span>
+                        <span>
+                            <picture>
+                                <img
+                                    src="https://th.bing.com/th/id/R.8eb68c7065e5057c9314f335d1bcb4a6?rik=jN4%2f3c2j9%2fNquA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2ftwitter-png-twitter-icon-1600.png&ehk=cfVuY5vaxmKssnSiLi2qsApgVuOQ2a3R0fEel7T0mJk%3d&risl=&pid=ImgRaw&r=0"
+                                    alt="logo-twitter"
+                                />
+                            </picture>
+                        </span>
+                    </div>
+                </div>
+                <div class="separator">
+                    <hr />
+                    <span>Or</span>
+                    <hr />
+                </div>
+                <div class="content">
+                    <form action="">
+                        <div class="names">
+                            <label for="name">
+                                <span>Name</span>
+                                <input type="text" name="name" />
+                            </label>
+                            <label for="username">
+                                <span>Username</span>
+                                <input type="text" name="username" />
+                            </label>
+                        </div>
+                        <label for="email">
+                            <span>Email</span>
+                            <input type="email" name="email" />
+                        </label>
+                        <label for="password">
+                            <span>Password</span>
+                            <div>
+                                <input
+                                    id="password"
+                                    type="password"
+                                    name="password"
+                                    placeholder="6+ characteres"
+                                />
+                                <span class="close" onclick="showAndHidde()">
+                                    <picture>
+                                        <img
+                                            src="./resources/img/lock.png"
+                                            alt="open-lock"
+                                        />
+                                    </picture>
+                                </span>
+                            </div>
+                        </label>
+                        <div class="terms">
+                            <label for="term">
+                                <input type="checkbox" name="term" />
+                                <span
+                                    >Creating an account means you're okay with
+                                    our <a href="">Terms of Service,</a
+                                    ><a href=""> Privacy Policy,</a> and our
+                                    default
+                                    <a href="">Notification Settings.</a></span
+                                >
+                            </label>
+                        </div>
+                        <button type="submit">Create Account</button>
+                    </form>
+                    <div class="protected">
+                        <span
+                            >This site is protected by reCAPTCHA and the Google
+                            <a href="">Privacy Policy</a> and
+                            <a href="">Terms of Service</a> apply.</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const password = document.getElementById("password");
+        const close = document.querySelector(".close");
+
+        function showAndHidde() {
+            if (password.getAttribute("type") == "password") {
+                password.setAttribute("type", "text");
+                close.children[0].children[0].setAttribute(
+                    "src",
+                    "./resources/img/unlock.png"
+                );
+            } else {
+                password.setAttribute("type", "password");
+                close.children[0].children[0].setAttribute(
+                    "src",
+                    "./resources/img/lock.png"
+                );
+            }
+        }
+
+        // Dark Mode
+        let dMainBackground = "#161717";
+        let dMainAColor = "#c6c3d1";
+        let dSeparatorSpan = "#e5e5e5";
+        let dColorMode = "white";
+        let dNormalOpacity = "1";
+        let dInputBackground = "#212121";
+        let dInputHoverBackground = "#454045";
+        let dProtectedSpan = "#c6c6ce";
+        // White Mode
+        let mainBackground = "white";
+        let mainAColor = "#220392";
+        let separatorSpan = "#e5e5e5";
+        let colorMode = "black";
+        let normalOpacity = "0.3";
+        let inputBackground = "#f3f3f4";
+        let inputHoverBackground = "white";
+        let protectedSpan = "#6e6d7a";
+
+        const mode = document.querySelector(".white-mode");
+        const rElement = document.querySelector(":root");
+        function changeMode() {
+            if (mode.getAttribute("class") == "dark-mode") {
+                mode.setAttribute("class", "white-mode");
+                rElement.style.setProperty("--main-background", mainBackground);
+                rElement.style.setProperty("--main-a", mainAColor);
+                rElement.style.setProperty("--separator-span", separatorSpan);
+                rElement.style.setProperty("--color-mode", colorMode);
+                rElement.style.setProperty("--normal-opacity", normalOpacity);
+                rElement.style.setProperty(
+                    "--input-background",
+                    inputBackground
+                );
+                rElement.style.setProperty(
+                    "--input-hover-background",
+                    inputHoverBackground
+                );
+                rElement.style.setProperty("--protected-span", protectedSpan);
+            } else {
+                mode.setAttribute("class", "dark-mode");
+                rElement.style.setProperty("--main-background", dMainBackground);
+                rElement.style.setProperty("--main-a", dMainAColor);
+                rElement.style.setProperty("--separator-span", dSeparatorSpan);
+                rElement.style.setProperty("--color-mode", dColorMode);
+                rElement.style.setProperty("--normal-opacity", dNormalOpacity);
+                rElement.style.setProperty(
+                    "--input-background",
+                    dInputBackground
+                );
+                rElement.style.setProperty(
+                    "--input-hover-background",
+                    dInputHoverBackground
+                );
+                rElement.style.setProperty("--protected-span", dProtectedSpan);
+            }
+        }
+    </script>
+</html>

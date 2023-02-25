@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;1,200;1,400&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.external-sign {
+    align-self: self-start;
+    display: flex;
+    gap: 1rem;
+}
+
+.google-btn {
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 0.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.1rem;
+}
+
+.google-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.google-btn picture {
+    width: 2rem;
+    height: 1.9rem;
+    background-color: white;
+    border-radius: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-btn picture img {
+    width: 75%;
+}
+
+.google-btn span {
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+}
+
+.twitter-btn {
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 0.2rem;
+    height: 2.2rem;
+    padding: 0.1rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.twitter-btn:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.twitter-btn picture {
+    width: 2rem;
+    height: 1.9rem;
+    border-radius: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.twitter-btn picture img {
+    width: 60%;
+    opacity: 0.8;
+}
+
+.separator {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.separator hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 0.1rem solid #e5e5e5;
+}
+
+.separator span {
+    position: relative;
+    top: -0.6rem;
+    color: #e5e5e5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.sections-input {
+    display: flex;
+    gap: 2rem;
+}
+
+.sections-input input {
+    background-color: #f3f3f4;
+    border: none;
+    padding: 0.5rem 0.3rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+}
+
+label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label span {
+    font-weight: 700;
+}
+
+label input {
+    width: 100%;
+    background-color: #f3f3f4;
+    border: none;
+    padding: 0.5rem 0.3rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+}
+
+label input:hover {
+    box-shadow: 0 0 0.1rem #ea4c89;
+    background-color: white;
+}
+
+label input:focus {
+    box-shadow: 0 0 0.2rem #ea4c89;
+    background-color: white;
+    outline: none;
+}
+
+.term {
+    display: flex;
+    flex-direction: row;
+}
+
+.term input {
+    width: 2rem;
+}
+
+.term span {
+    font-weight: 400;
+}
+
+.submit-btn {
+    background-color: #ea4c89;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
