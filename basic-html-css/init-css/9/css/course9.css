@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.frame-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    gap: 1rem;
+}
+
+.btn-modern {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.btn-modern:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: aquamarine;
+    color: red;
+    transition: 0.4s;
+}
+
+.btn-shadow {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0.1rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-shadow:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+    color: beige;
+    transition: 0.4s;
+    font-size: medium;
+}

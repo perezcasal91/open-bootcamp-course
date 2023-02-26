@@ -1,0 +1,62 @@
+.main {
+    width: 30rem;
+    height: 30rem;
+    background-color: blue;
+}
+
+.transform1 {
+    width: 25%;
+    height: 25%;
+    background-color: white;
+}
+
+.transform1:hover {
+    transform: translateX(100%);
+    background-color: blueviolet;
+}
+
+.transition1 {
+    width: 25%;
+    height: 25%;
+    background-color: beige;
+    transition: transform 1s ease-in 1s;
+}
+
+.transition1:hover {
+    transform: translateX(100%);
+    background-color: blueviolet;
+}
+
+.animation1 {
+    width: 25%;
+    height: 25%;
+    background-color: white;
+    animation: square 5s ease-in 1s alternate infinite;
+}
+
+.animation1:hover {
+    animation-play-state: paused;
+}
+
+@keyframes square {
+    0% {
+        transform: translateX(0%);
+        background-color: white;
+    }
+    25% {
+        transform: translateX(100%);
+        background-color: grey;
+    }
+    50% {
+        transform: translateX(100%) translateY(100%);
+        background-color: blue;
+    } 
+    75% {
+        transform: translateY(100%) translateY(0%);
+        background-color: blueviolet;
+    }
+    100% {
+        transform: translateY(0%) translateX(0%);
+        background-color: black;
+    }
+}
