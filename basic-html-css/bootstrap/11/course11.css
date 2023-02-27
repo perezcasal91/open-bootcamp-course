@@ -1,0 +1,27 @@
+.container {
+    margin: 0.5rem;
+}
+
+.row span {
+    border: 1px solid blue;
+}
+
+.col {
+    background-color: aqua;
+}
+
+.col-sm {
+    background-color: bisque;
+}
+
+.col-md {
+    background-color: azure;
+}
+
+.col-lg {
+    background-color: blueviolet;
+}
+
+.col-xl {
+    background-color: chartreuse;
+}
