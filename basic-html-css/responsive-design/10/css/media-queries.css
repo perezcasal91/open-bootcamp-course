@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* Using the tag screen and with and operator < */
+@media screen and (width < 576px) {
+    h1 {
+        color: red;
+    }
+}
+
+/* Using the tag all and the max-width */
+@media all and (max-width: 576px) {
+    h1 {
+        color: blue;
+    }
+}
+
+/* Using the max-width only */
+@media (max-width: 576px) {
+    h1 {
+        color: brown;
+    }
+}
+
+/* Using the min-width */
+@media (min-width: 576px) {
+    h1 {
+        color: blueviolet;
+    }
+}
+
+@media (min-width: 995px) {
+    h1 {
+        color: green;
+    }
+}
+
+/* Using the landscape orientation */
+@media (orientation: landscape) {
+    p {
+        color: chocolate;
+    }
+}

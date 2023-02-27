@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.frame-container {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+}
+
+.item {
+    display: flex;
+    background-color: salmon;
+    padding: 0.25rem;
+    width: 10rem;
+}
+
+@media (max-width: 35rem) {
+    .frame-container {
+        flex-direction: column;
+        height: 10rem;
+    }
+}

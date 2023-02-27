@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.scenario {
+    margin: 1rem 0;
+    border: 0.1rem solid #ccc;
+    padding: 1rem;
+    width: 100%;
+}
+
+.scenario-1 {
+    width: 100%;
+}
+.scenario-2 {
+    width: 50%;
+}
+
+.px {
+    background-color: green;
+    width: 200px;
+}
+
+.porcent {
+    background-color: red;
+    width: 50%;
+}
+
+.view {
+    background-color: yellow;
+    width: 50vw;
+}
