@@ -8,4 +8,4 @@ height = float(input('Please enter your height in Ms:'))
 bodyMassIndex = weight / (height ** 2)
 
 print()
-print('Your BMI is:' + str(math.ceil(bodyMassIndex)))
+print('Your BMI is:', math.ceil(bodyMassIndex))
