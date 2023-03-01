@@ -1,0 +1,10 @@
+- Package in Python
+    * Librarys
+
+- What is an Interpreter
+    * An Interpreter is a program who coverage another program(Sequence of Characters), and then it executed.
+
+- Variables and Memory Space
+    * If you save a value in a variable python will give an memory space for that value, but if you want chage the value of that variable python creates a new memory space for the new value, after a while with the garbage collector it remove all the memory space it is'nt in use.
+
+
