@@ -18,18 +18,19 @@ class Student:
     def setNote(self, note):
         self._note = note
 
-    def aproved(self):
+    def approved(self):
+        print('You score has been ', self._note)
         return print('Congratulations!!!, you are approved') if (self._note >= 60) else print('Sorry, you are not approved.')
     
 sE = Student('Elio', 95)
 
 print(sE.getName())
 print(sE.getNote())
-sE.aproved()
+sE.approved()
 
 sD = Student('Day', 59)
 
 print(sD.getName())
 print(sD.getNote())
-sD.aproved()
+sD.approved()
 
