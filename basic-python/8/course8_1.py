@@ -11,7 +11,7 @@ def main():
 
     data = ['Line 4', 'Line 5', 'Line 6']
     writeFile(filePath, 'a', data)
-    
+
     resultData = readFile(filePath, 'r')
     for line in resultData:
         print(line)
@@ -24,10 +24,12 @@ def createFile(path):
 
 def writeFile(path, mode, data):
     file = open(path, mode)
+
     for line in data:
         if not str(line).endswith('\n'):
             line += '\n'
         file.write(line)
+
     file.close()
 
 

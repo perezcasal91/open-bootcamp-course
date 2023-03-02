@@ -1,5 +1,6 @@
 import pickle
 
+
 class Vehicle:
     _model = None
     _color = None
@@ -11,7 +12,7 @@ class Vehicle:
         self._color = color
         self._wheels = wheels
         self._doors = doors
-    
+
     def __str__(self):
         return f'Vehicle(model:{self._model}, color:{self._color}, wheels:{self._wheels}, doors:{self._doors})'
 
@@ -23,16 +24,19 @@ def main():
     serializeV = unserializeData(filePath)
     print(serializeV)
 
+
 def serializeData(path, data):
     file = open(path, 'wb')
     pickle.dump(data, file)
     file.close()
+
 
 def unserializeData(path):
     file = open(path, 'rb')
     data = pickle.load(file)
     file.close()
     return data
+
 
 if __name__ == '__main__':
     main()
