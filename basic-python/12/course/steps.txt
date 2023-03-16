@@ -1,0 +1,9 @@
+1 - Create a folder for the Project
+2 - Go to the root folder and type the command "django-admin startproject" plus name of the main project,
+I use main_project 
+3 - Use the file "manage.py" and create the app using the command "startapp" plus name of the app, I use for this case film_app
+4 - Use the file "manage.py" and make the migrations using the command "makemigrations" then confirm all that migrations using the command "migrate"
+5 - Use the file "manage.py" and crete a super user to control the django database, use the command "createsuperuser", is gonna aks you for the username, email and password you want to use.
+6 - Go to the settings.py file in the main project folder and in INSTALLED_APPS, add the app you just create, in this case is film_app, using the rout folder file apps and config class, "film_app.apps.FilmAppConfig"
+7 - Go to the film_app and if the file urls dosent exist created, put inside the urlpatters array, then added in the urls file of the main project, using the module "include", like this "path('film/', include('film_app.urls'))"
+8 - Crete the vies, models, and everything else..

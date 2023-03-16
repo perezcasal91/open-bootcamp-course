@@ -1,0 +1,91 @@
+{% extends "template.html" %} {% block content %}
+<div class="content-panel">
+    <div class="slider-movie-panel">
+        {% for movie in movieList %}
+        <div class="movie-slide" style="background-image: linear-gradient(
+            rgba(255, 255, 255, 0.1),
+            rgba(29, 29, 28, 0.8)
+        ), url('../static/img/{{ movie.title }}.jpeg');
+        ">
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.summary }}</p>
+            <div class="know-more">
+                <button>See all his work</button>
+                <button>More info</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h1 class="director-label">All Directors</h1>
+    <div class="directors-panel">
+        {% for director in directorList %}
+        <div
+            class="director"
+            style="background-image: linear-gradient(
+                rgba(255, 255, 255, 0.1),
+                rgba(29, 29, 28, 0.8)
+            ), url('../static/img/{{ director.name }}.jpg');
+            "
+        >
+            <h2>{{ director.name }}</h2>
+            <p>{{ director.description }}</p>
+            <div class="know-more">
+                <button>See all his work</button>
+                <button>More info</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h1 class="movie-label">All Movies</h1>
+    <div class="movies-panel">
+        <button
+            class="slide-control slide-control-prev"
+            onclick="sldPrev('slide1')"
+        >
+            &#10094;
+        </button>
+        <ul id="slide1" class="slide-container">
+            {% for movie in movieList %}
+            <li class="slide-content">
+                <div class="movie" style="background-image: linear-gradient(
+                    rgba(255, 255, 255, 0.1),
+                    rgba(29, 29, 28, 0.8)
+                ), url('../static/img/{{ movie.title }}.jpeg');
+                ">
+                    <h2>{{ movie.title }}</h2>
+                    <p>{{ movie.summary }}</p>
+                    <div class="know-more">
+                        <button>See all his work</button>
+                        <button>More info</button>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <button
+            class="slide-control slide-control-next"
+            onclick="sldNext('slide1')"
+        >
+            &#10095;
+        </button>
+    </div>
+</div>
+<script>
+    function sldNext(slideId) {
+        let slider = document.getElementById(slideId);
+        let prev = document.querySelector(".slide-control-next");
+        slider.scrollBy({
+            left: 50,
+            behavior: "smooth",
+        });
+    }
+
+    function sldPrev(slideId) {
+        let slider = document.getElementById(slideId);
+        slider.scrollBy({
+            left: -50,
+            behavior: "smooth",
+        });
+    }
+</script>
+{% endblock %}

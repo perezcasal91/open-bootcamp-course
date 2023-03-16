@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        {% block title %}
+        <title>Movie Collection</title>
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% load static %}
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href='{% static "css/main.css" %}'
+        />
+        <script src='{% static "js/api.js" %}'></script>
+    </head>
+    <body>
+        <main class="main-panel">
+            <nav class="nav-panel">
+                <header>Movies and Directors</header>
+                <div class="link-panel">
+                    <a href="#">Home</a>
+                    <a href="#">Movies</a>
+                    <a href="#">Directors</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="search-panel">
+                    <div class="search">
+                        <span>Search</span>
+                    </div>
+                </div>
+            </nav>
+            {% block content %}{% endblock %}
+            <footer class="footer">
+                <h4>Eliser Perez Casal © All rights reseverd. 2023</h4>
+            </footer>
+        </main>
+    </body>
+</html>
